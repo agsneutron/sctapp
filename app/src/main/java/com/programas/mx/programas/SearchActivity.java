@@ -11,7 +11,17 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.github.mikephil.charting.data.Entry;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
+import com.github.mikephil.charting.utils.ColorTemplate;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -204,6 +214,45 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+        //
+        // inicia chart
+        PieChart bchart = (PieChart) findViewById(R.id.bchart);
+
+        List<PieEntry> entries = new ArrayList<>();
+
+        entries.add(new PieEntry(18.5f, "Green"));
+        entries.add(new PieEntry(26.7f, "Yellow"));
+        entries.add(new PieEntry(24.0f, "Red"));
+        entries.add(new PieEntry(30.8f, "Blue"));
+
+        PieDataSet set = new PieDataSet(entries, "Election Results");
+        PieData data = new PieData(set);
+        bchart.setData(data);
+        bchart.invalidate(); // refresh
+
+
+        set.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        data.setValueTextSize(10f);
+        //data.setBarWidth(0.9f);
+
+        bchart.setTouchEnabled(false);
+        bchart.setData(data);
+
+
     }
 
+    protected String[] mMonths = new String[] {
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"
+    };
+
+    protected String[] mParties = new String[] {
+            "Party A", "Party B", "Party C", "Party D", "Party E", "Party F", "Party G", "Party H",
+            "Party I", "Party J", "Party K", "Party L", "Party M", "Party N", "Party O", "Party P",
+            "Party Q", "Party R", "Party S", "Party T", "Party U", "Party V", "Party W", "Party X",
+            "Party Y", "Party Z"
+    };
 }
