@@ -19,7 +19,7 @@ public class SearchActivity extends AppCompatActivity {
     SearchableSpinner municipio;
     SearchableSpinner dependencia;
     SearchableSpinner programa;
-    String[] mpos = new String[] {""};
+    String[] mpos = new String[] {"Selecciona Municipio"};
 
 
     @Override
@@ -70,6 +70,9 @@ public class SearchActivity extends AppCompatActivity {
                 Log.e("Posicion",String.valueOf(position));
                 switch (position){
                     case 0:
+                        mpos = new String[] {"Selecciona Municipio"};
+                        break;
+                    case 1:
                         mpos = new String[] {"Selecciona Municipio", "Aguascalientes",
                                 "Asientos",
                                 "Calvillo",
@@ -83,7 +86,7 @@ public class SearchActivity extends AppCompatActivity {
                                 "Tepezalá"
                         };
                         break;
-                    case 1:
+                    case 2:
                         mpos= new String[] {"Selecciona Municipio","Ensenada" ,
                                 "Mexicali" ,
                                 "Playas de Rosarito" ,
@@ -91,7 +94,7 @@ public class SearchActivity extends AppCompatActivity {
                         };
                         break;
 
-                    case 2:
+                    case 3:
                         mpos= new String[] {"Selecciona Municipio","Comondú" ,
                                 "La Paz" ,
                                 "Loreto" ,
@@ -100,15 +103,20 @@ public class SearchActivity extends AppCompatActivity {
                         };
                         break;
 
-                    case 3:
+                    case 4:
                         mpos = new String[] {"Selecciona Municipio", " Alvaro Obregón" , " Azcapotzalco" , " Benito Juárez" ,
                                 " Coyoacán" , " Cuahutémoc" , " Cuajimalpa" , " Gustavo A. Madero" , " Iztacalco" , " Iztapalapa" ,
                                 " Magdalena Contreras" , " Miguel Hidalgo" , " Milpa Alta" , " Tlahuac" , " Tlalpan" , " Venustiano Carranza" ,
                                 " Xochimilco"};
+                        break;
                     default:
                         mpos = new String[] {"Selecciona Municipio"};
 
                 }
+
+                ArrayAdapter<String> adapterM = new ArrayAdapter<String>(SearchActivity.this, android.R.layout.simple_spinner_item, mpos);
+                adapterM.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                municipio.setAdapter(adapterM);
 
 
             }
@@ -120,9 +128,7 @@ public class SearchActivity extends AppCompatActivity {
 
         });
 
-        ArrayAdapter<String> adapterM = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, mpos);
-        adapterM.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        municipio.setAdapter(adapterM);
+
 
         municipio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
