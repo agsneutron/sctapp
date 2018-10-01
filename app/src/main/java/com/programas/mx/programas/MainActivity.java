@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import java.util.ArrayList;
@@ -14,12 +17,19 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.programas.mx.programas.domain.ProgramasBeneficiarios;
+import com.programas.mx.programas.domain.ProgramasInversion;
+import com.programas.mx.programas.ui.ResultadosAdapter;
+import com.programas.mx.programas.ui.ResultadosAdapterI;
 
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    ArrayList<ProgramasBeneficiarios> datasetPB;
+    ArrayList<ProgramasInversion> datasetPI;
+    private RecyclerView recyclerView, recyclerViewI;
+    private RecyclerView.Adapter adapter, adapterI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Here, a BarChart is initialized from xml
+        // inicia chart
         BarChart bchart = (BarChart) findViewById(R.id.bchart);
+
 
 
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
@@ -64,6 +75,70 @@ public class MainActivity extends AppCompatActivity {
 
         bchart.setTouchEnabled(false);
         bchart.setData(data);
+
+        //inicia top programas vs beneficiarios
+
+        ArrayList<ProgramasBeneficiarios> arregloPB = new ArrayList<>();
+        arregloPB.add(new ProgramasBeneficiarios("Apoyo a la Población Vulnerable","55436"));
+        arregloPB.add(new ProgramasBeneficiarios("Nutrición con Valor","46290"));
+        arregloPB.add(new ProgramasBeneficiarios("Tu Empleo Formal","40285"));
+        arregloPB.add(new ProgramasBeneficiarios("Asistencia Social a la Comunidad","38890"));
+        arregloPB.add(new ProgramasBeneficiarios("Apoyo al Estudiante","33296"));
+        arregloPB.add(new ProgramasBeneficiarios("Apoyo a Mujeres Jefas de Familia","29089"));
+        arregloPB.add(new ProgramasBeneficiarios("Formación del Sector Artesanal","26489"));
+        arregloPB.add(new ProgramasBeneficiarios("Proyectos Productivos","25728"));
+        arregloPB.add(new ProgramasBeneficiarios("Apoyo a Asociaciones Culturales","22862"));
+        arregloPB.add(new ProgramasBeneficiarios("Beca Deportiva","20876"));
+        arregloPB.add(new ProgramasBeneficiarios("Atención salud Visual","19873"));
+        arregloPB.add(new ProgramasBeneficiarios("Premio Estatal a la Juventud","18250"));
+        arregloPB.add(new ProgramasBeneficiarios("Mejoramiento de Vivienda","18998"));
+        arregloPB.add(new ProgramasBeneficiarios("Programa de Apoyo a Pequeños Productores","16480"));
+        arregloPB.add(new ProgramasBeneficiarios("Apoyo a la Población Indígena","15027"));
+
+
+
+        datasetPB = new ArrayList<ProgramasBeneficiarios>();
+        datasetPB = arregloPB;
+        recyclerView = (RecyclerView) findViewById(R.id.rv_beneficiarios);
+        recyclerView.setHasFixedSize(true);
+        adapter = new ResultadosAdapter(datasetPB, R.layout.item_list_content, MainActivity.this);//(cobroarraylist, R.layout.cobrador_item_lista);
+        //recyclerView.setAdapter(new CobroAdapter(cobroarraylist, R.layout.cobrador_item_lista));  //cobroarraylist
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        //inicia top programas vs inversión
+
+        ArrayList<ProgramasInversion> arregloPI = new ArrayList<>();
+        arregloPI.add(new ProgramasInversion("Apoyo a Asociaciones Culturales","$ 72,286,278.00"));
+        arregloPI.add(new ProgramasInversion("Beca Deportiva","$ 43,576,588.00"));
+        arregloPI.add(new ProgramasInversion("Apoyo a la Población Vulnerable","$ 23,876,538.00"));
+        arregloPI.add(new ProgramasInversion("Nutrición con Valor","$ 12,456,256.00"));
+        arregloPI.add(new ProgramasInversion("Tu Empleo Formal","$ 4,535,843.00"));
+        arregloPI.add(new ProgramasInversion("Asistencia Social a la Comunidad","$ 2,457,239.00"));
+        arregloPI.add(new ProgramasInversion("Apoyo al Estudiante","$ 1,834,164.00"));
+        arregloPI.add(new ProgramasInversion("Atención salud Visual","$ 1,006,235.00"));
+        arregloPI.add(new ProgramasInversion("Premio Estatal a la Juventud","$ 975,246.00"));
+        arregloPI.add(new ProgramasInversion("Mejoramiento de Vivienda","$ 753,125.00"));
+        arregloPI.add(new ProgramasInversion("Programa de Apoyo a Pequeños Productores","$ 682,349.00"));
+        arregloPI.add(new ProgramasInversion("Apoyo a la Población Indígena","$ 579,835.00"));
+        arregloPI.add(new ProgramasInversion("Apoyo a Mujeres Jefas de Familia","$ 509,998.00"));
+        arregloPI.add(new ProgramasInversion("Formación del Sector Artesanal","$ 459,976.00"));
+        arregloPI.add(new ProgramasInversion("Proyectos Productivos","$ 431,930.00"));
+
+
+
+
+        datasetPI = new ArrayList<ProgramasInversion>();
+        datasetPI = arregloPI;
+        recyclerViewI = (RecyclerView) findViewById(R.id.rv_presupuesto);
+        recyclerViewI.setHasFixedSize(true);
+        adapterI = new ResultadosAdapterI(datasetPI, R.layout.item_list_contenti, MainActivity.this);//(cobroarraylist, R.layout.cobrador_item_lista);
+        //recyclerView.setAdapter(new CobroAdapter(cobroarraylist, R.layout.cobrador_item_lista));  //cobroarraylist
+        recyclerViewI.setAdapter(adapterI);
+        recyclerViewI.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        recyclerViewI.setItemAnimator(new DefaultItemAnimator());
+
 
     }
 }
