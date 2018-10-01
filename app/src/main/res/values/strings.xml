@@ -17,4 +17,5 @@
         completions."
     </string>
     <string name="LoginSuccess">Sesión iniciada correctamente !</string>
+    <string name="title_activity_search">SearchActivity</string>
 </resources>
