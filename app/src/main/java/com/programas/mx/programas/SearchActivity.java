@@ -1,8 +1,10 @@
 package com.programas.mx.programas;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -11,7 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.Entry;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
@@ -19,17 +23,26 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
-
 import java.util.ArrayList;
 import java.util.List;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class SearchActivity extends AppCompatActivity {
+
+public class SearchActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     SearchableSpinner estado;
     SearchableSpinner municipio;
     SearchableSpinner dependencia;
     SearchableSpinner programa;
     String[] mpos = new String[] {"Selecciona Municipio"};
+
+    //MAPA
+
+    private GoogleMap mMap;
 
 
     @Override
@@ -38,6 +51,13 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        //MAPA
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        //
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -217,18 +237,18 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-        //
+
         // inicia chart
         PieChart bchart = (PieChart) findViewById(R.id.bchart);
 
         List<PieEntry> entries = new ArrayList<>();
 
-        entries.add(new PieEntry(18.5f, "Green"));
-        entries.add(new PieEntry(26.7f, "Yellow"));
-        entries.add(new PieEntry(24.0f, "Red"));
-        entries.add(new PieEntry(30.8f, "Blue"));
+        entries.add(new PieEntry(18.5f, "Nutrición con Valor"));
+        entries.add(new PieEntry(26.7f, "Atención salud Visual"));
+        entries.add(new PieEntry(24.0f, "Mejoramiento de Vivienda"));
+        entries.add(new PieEntry(30.8f, "Apoyo al Estudiante"));
 
-        PieDataSet set = new PieDataSet(entries, "Election Results");
+        PieDataSet set = new PieDataSet(entries, "Miles de Beneficiarios por Programa");
         PieData data = new PieData(set);
         bchart.setData(data);
         bchart.invalidate(); // refresh
@@ -236,23 +256,44 @@ public class SearchActivity extends AppCompatActivity {
 
         set.setColors(ColorTemplate.MATERIAL_COLORS);
 
-        data.setValueTextSize(10f);
-        //data.setBarWidth(0.9f);
+        data.setValueTextSize(20f);
+        data.setValueTextColor(Color.DKGRAY);
+       // data.setBarWidth(0.9f);
 
-        bchart.setTouchEnabled(false);
+        bchart.setTouchEnabled(true);
         bchart.setData(data);
+        bchart.setEntryLabelTextSize(10f);
+        bchart.setEntryLabelColor(Color.BLACK);
+        bchart.setDrawEntryLabels(true);
 
+        Legend l = bchart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
+
+
+        //inicia mapa
+
+
+
+
+        // inicia datos
 
     }
 
-    protected String[] mMonths = new String[] {
-            "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"
-    };
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
 
-    protected String[] mParties = new String[] {
-            "Party A", "Party B", "Party C", "Party D", "Party E", "Party F", "Party G", "Party H",
-            "Party I", "Party J", "Party K", "Party L", "Party M", "Party N", "Party O", "Party P",
-            "Party Q", "Party R", "Party S", "Party T", "Party U", "Party V", "Party W", "Party X",
-            "Party Y", "Party Z"
-    };
+        // Add a marker in Sydney, Australia, and move the camera.
+        LatLng sydney = new LatLng(19.4326009, -99.1333416);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Ciudad de México, México"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+
 }

@@ -17,4 +17,8 @@
     </string>
     <string name="LoginSuccess">Sesión iniciada correctamente !</string>
     <string name="title_activity_search">Buscador por Filtros</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_programas">Programas</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
