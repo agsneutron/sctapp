@@ -1,6 +1,9 @@
 package com.programas.mx.programas;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +11,10 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -25,7 +31,30 @@ import com.programas.mx.programas.ui.ResultadosAdapterI;
 
 
 public class MainActivity extends AppCompatActivity {
+    private TextView mTextMessage;
 
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    startActivity(new Intent(MainActivity.this, MainActivity.class));
+                    mTextMessage.setText(R.string.title_dashboard);
+
+                    return true;
+                case R.id.navigation_dashboard:
+                    mTextMessage.setText(R.string.title_buscador);
+
+                    return true;
+                case R.id.navigation_notifications:
+                    mTextMessage.setText(R.string.title_programas);
+                    return true;
+            }
+            return false;
+        }
+    };
     ArrayList<ProgramasBeneficiarios> datasetPB;
     ArrayList<ProgramasInversion> datasetPI;
     private RecyclerView recyclerView, recyclerViewI;
@@ -35,18 +64,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         // inicia chart
         BarChart bchart = (BarChart) findViewById(R.id.bchart);

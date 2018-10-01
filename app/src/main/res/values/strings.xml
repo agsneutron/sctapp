@@ -18,7 +18,7 @@
     </string>
     <string name="LoginSuccess">Sesión iniciada correctamente !</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_buscador">Buscador</string>
+    <string name="title_programas">Programas</string>
 </resources>
