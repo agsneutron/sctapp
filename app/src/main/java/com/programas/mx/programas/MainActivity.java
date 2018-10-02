@@ -1,6 +1,7 @@
 package com.programas.mx.programas;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -16,13 +17,31 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.HorizontalBarChart;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.programas.mx.programas.domain.ProgramasBeneficiarios;
 import com.programas.mx.programas.domain.ProgramasInversion;
 import com.programas.mx.programas.ui.ResultadosAdapter;
@@ -30,8 +49,9 @@ import com.programas.mx.programas.ui.ResultadosAdapterI;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnChartValueSelectedListener, OnMapReadyCallback {
     private TextView mTextMessage;
+    private GoogleMap mMap;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -72,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        //MAPA
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        //
 
         // inicia chart
         BarChart bchart = (BarChart) findViewById(R.id.bchart);
@@ -87,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
         BarDataSet set1;
 
-        set1 = new BarDataSet(yVals1, "The year 2017");
+        set1 = new BarDataSet(yVals1, "Programas a 2018");
         set1.setColors(ColorTemplate.MATERIAL_COLORS);
 
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
@@ -98,10 +123,110 @@ public class MainActivity extends AppCompatActivity {
         data.setValueTextSize(10f);
         data.setBarWidth(0.9f);
 
-        bchart.setTouchEnabled(false);
+
+        bchart.setTouchEnabled(true);
         bchart.setData(data);
+        bchart.setDrawGridBackground(false);
+
+
+        bchart.setDrawValueAboveBar(true);
+
+        Legend l = bchart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l.setForm(Legend.LegendForm.SQUARE);
+        l.setDrawInside(true);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(0f);
+        l.setYOffset(0f);
 
         //inicia top programas vs beneficiarios
+
+        //CHART
+
+        HorizontalBarChart mChart2 = findViewById(R.id.bchart3);
+        mChart2.setOnChartValueSelectedListener(this);
+        // mChart.setHighlightEnabled(false);
+
+        mChart2.setDrawBarShadow(true);
+
+        mChart2.setDrawValueAboveBar(true);
+
+        mChart2.getDescription().setEnabled(true);
+
+        // if more than 60 entries are displayed in the chart, no values will be
+        // drawn
+        mChart2.setMaxVisibleValueCount(60);
+
+        // scaling can now only be done on x- and y-axis separately
+        mChart2.setPinchZoom(true);
+
+        // draw shadows for each bar that show the maximum value
+        // mChart.setDrawBarShadow(true);
+
+        mChart2.setDrawGridBackground(false);
+
+        XAxis xl = mChart2.getXAxis();
+        xl.setPosition(XAxis.XAxisPosition.BOTTOM);
+        //xl.setTypeface(mTfLight);
+        xl.setDrawAxisLine(true);
+        xl.setDrawGridLines(false);
+        xl.setGranularity(10f);
+
+        YAxis yl = mChart2.getAxisLeft();
+        //yl.setTypeface(mTfLight);
+        yl.setDrawAxisLine(true);
+        yl.setDrawGridLines(true);
+        yl.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+//        yl.setInverted(true);
+
+        YAxis yr = mChart2.getAxisRight();
+        //yr.setTypeface(mTfLight);
+        yr.setDrawAxisLine(true);
+        yr.setDrawGridLines(false);
+        yr.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+//        yr.setInverted(true);
+
+        float barWidth = 0.7f;
+        float spaceForBar = 10f;
+
+        ArrayList<BarEntry> yVals2 = new ArrayList<BarEntry>();
+
+        for (int i = (int) 0; i < 10 + 1; i++) {
+            float val = (float) (Math.random());
+            yVals2.add(new BarEntry(i, val));
+        }
+
+        BarDataSet set2;
+
+        set2 = new BarDataSet(yVals2, "Beneficiarios por Programa");
+
+        set2.setDrawIcons(true);
+
+        ArrayList<IBarDataSet> dataSets2 = new ArrayList<IBarDataSet>();
+        dataSets2.add(set2);
+
+        set2.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        BarData data2 = new BarData(dataSets2);
+        data2.setValueTextSize(10f);
+        //data.setValueTypeface(mTfLight);
+        data2.setBarWidth(barWidth);
+        mChart2.setData(data2);
+
+        mChart2.setFitBars(true);
+        mChart2.animateY(2500);
+
+
+        Legend l2 = mChart2.getLegend();
+        l2.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l2.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        l2.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l2.setDrawInside(false);
+        l2.setFormSize(8f);
+        l2.setXEntrySpace(4f);
+        //RV
 
         ArrayList<ProgramasBeneficiarios> arregloPB = new ArrayList<>();
         arregloPB.add(new ProgramasBeneficiarios("Apoyo a la Población Vulnerable","55436"));
@@ -133,6 +258,49 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         //inicia top programas vs inversión
+
+        //chart
+        PieChart bchart3 = (PieChart) findViewById(R.id.bchart2);
+
+        List<PieEntry> entries3 = new ArrayList<>();
+
+        entries3.add(new PieEntry(18.5f, "Nutrición con Valor"));
+        entries3.add(new PieEntry(26.7f, "Atención salud Visual"));
+        entries3.add(new PieEntry(24.0f, "Mejoramiento de Vivienda"));
+        entries3.add(new PieEntry(30.8f, "Apoyo al Estudiante"));
+
+        PieDataSet set3 = new PieDataSet(entries3, "Miles de Beneficiarios por Programa");
+        PieData data3 = new PieData(set3);
+        bchart3.setData(data3);
+        bchart3.invalidate(); // refresh
+
+
+        set3.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        data3.setValueTextSize(20f);
+        data3.setValueTextColor(Color.DKGRAY);
+        // data.setBarWidth(0.9f);
+
+        bchart3.setTouchEnabled(true);
+        bchart3.setData(data3);
+        bchart3.setEntryLabelTextSize(10f);
+        bchart3.setEntryLabelColor(Color.BLACK);
+        bchart3.setDrawEntryLabels(true);
+
+        Legend l3 = bchart3.getLegend();
+        l3.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l3.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l3.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l3.setDrawInside(false);
+        l3.setXEntrySpace(7f);
+        l3.setYEntrySpace(0f);
+        l3.setYOffset(0f);
+
+
+
+
+
+        //RV
 
         ArrayList<ProgramasInversion> arregloPI = new ArrayList<>();
         arregloPI.add(new ProgramasInversion("Apoyo a Asociaciones Culturales","$ 72,286,278.00"));
@@ -166,61 +334,38 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onValueSelected(Entry e, Highlight h) {
+
+    }
+
+    @Override
+    public void onNothingSelected() {
+
+    }
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Mexico and move the camera.
+        LatLng mexico = new LatLng(19.4326009, -99.1333416);
+        mMap.addMarker(new MarkerOptions().position(mexico).title("Ciudad de México, México"));
+
+        LatLng bc = new LatLng(32.6519, -115.4683);
+        mMap.addMarker(new MarkerOptions().position(bc).title("Baja California, México"));
+
+        LatLng bcs = new LatLng(23.25000, -109.75000);
+        mMap.addMarker(new MarkerOptions().position(bcs).title("Baja California Sur, México"));
+
+        LatLng ag = new LatLng(21.8823400, -102.2825900);
+        mMap.addMarker(new MarkerOptions().position(ag).title("Aguascalientes, México"));
+
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
+        mMap.animateCamera( CameraUpdateFactory.zoomTo( 3.0f ) );
+    }
 }
 
-/*
-*
-*
-* HIChartView chartView = (HIChartView) findViewById(R.id.hc);
-
-        HIOptions options = new HIOptions();
-
-        HIChart chart = new HIChart();
-
-
-        chart.setType("pie");
-
-        HIOptions3d options3d = new HIOptions3d ();
-
-
-        options3d.setEnabled(true);
-        options3d.setAlpha(45);
-        options3d.setBeta(0);
-        chart.setOptions3d(options3d);
-
-
-        HITitle title = new HITitle();
-        title.setText("Browser market shares at a specific website, 2014");
-        options.setTitle(title);
-
-        HITooltip tooltip = new HITooltip();
-        tooltip.setPointFormat("{series.name}: <b>{point.percentage:.1f}%</b>");
-        options.setTooltip(tooltip);
-
-        HIPlotOptions plotOptions = new HIPlotOptions();
-        HIPie pie = new HIPie();
-        plotOptions.setPie(new HIPie());
-        plotOptions.allowPointSelect = true;
-        plotOptions.pie.cursor = "pointer";
-        plotOptions.pie.depth = 35;
-        plotOptions.pie.dataLabels = new HIDataLabels();
-        plotOptions.pie.dataLabels.enabled = true;
-        plotOptions.pie.dataLabels.format = "{point.name}";
-        options.plotOptions = plotOptions;
-
-        HIPie series1 = new HIPie();
-        series1.type = "pie";
-        series1.name = "Browser share";
-        Object[] firefoxData = new Object[] { "Firefox", 45.0 };
-        Object[] IEData = new Object[] { "IE", 26.0 };
-        HashMap<String, Object> chromeData = new HashMap<>();
-        chromeData.put("name", "Chrome");
-        chromeData.put("y", 12.8);
-        chromeData.put("sliced", true);
-        chromeData.put("selected", true);
-        Object[] safariData = new Object[] { "Safari", 8.5 };
-        Object[] operaData = new Object[] { "Opera", 6.2 };
-        Object[] othersData = new Object[] { "Others", 0.7 };
-        series1.data = new ArrayList<>(Arrays.asList(firefoxData, IEData, chromeData, safariData, operaData, othersData));
-        options.series = new ArrayList<>(Arrays.asList(series1));
-        chartView.options = options;*/

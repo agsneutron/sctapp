@@ -4,24 +4,26 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.Entry;
 import com.google.android.gms.maps.CameraUpdateFactory;
+import com.programas.mx.programas.domain.Programas;
+
+import com.programas.mx.programas.ui.ResultadosAdaptersr;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +46,11 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
     private GoogleMap mMap;
 
+    //RV
+    ArrayList<Programas> datasetPB;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adaptersr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +61,8 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
         //MAPA
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         //
 
@@ -281,7 +288,39 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
 
-        // inicia datos
+        // inicia datos RV
+        //RV
+
+
+        ArrayList<Programas> arregloPB = new ArrayList<>();
+        arregloPB.add(new Programas("Apoyo a la Población Vulnerable","55436","Apoyo a Asociaciones Culturales","$ 72,286,278.00","","",""));
+        arregloPB.add(new Programas("Nutrición con Valor","46290", "Beca Deportiva","$ 43,576,588.00","","",""));
+        arregloPB.add(new Programas("Tu Empleo Formal","40285", "Apoyo a la Población Vulnerable","$ 23,876,538.00","","",""));
+        arregloPB.add(new Programas("Asistencia Social a la Comunidad","38890","Nutrición con Valor","$ 12,456,256.00","","",""));
+        arregloPB.add(new Programas("Apoyo al Estudiante","33296", "Tu Empleo Formal","$ 4,535,843.00","","",""));
+        arregloPB.add(new Programas("Apoyo a Mujeres Jefas de Familia","29089","Asistencia Social a la Comunidad","$ 2,457,239.00","","",""));
+        arregloPB.add(new Programas("Formación del Sector Artesanal","26489","Apoyo al Estudiante","$ 1,834,164.00","","",""));
+        arregloPB.add(new Programas("Proyectos Productivos","25728","Atención salud Visual","$ 1,006,235.00","","",""));
+        arregloPB.add(new Programas("Apoyo a Asociaciones Culturales","22862", "Premio Estatal a la Juventud","$ 975,246.00","","",""));
+        arregloPB.add(new Programas("Beca Deportiva","20876", "Mejoramiento de Vivienda","$ 753,125.00","","",""));
+        arregloPB.add(new Programas("Atención salud Visual","19873","Programa de Apoyo a Pequeños Productores","$ 682,349.00","","",""));
+        arregloPB.add(new Programas("Premio Estatal a la Juventud","18250", "Apoyo a la Población Indígena","$ 579,835.00","","",""));
+        arregloPB.add(new Programas("Mejoramiento de Vivienda","18998","Apoyo a Mujeres Jefas de Familia","$ 509,998.00","","",""));
+        arregloPB.add(new Programas("Programa de Apoyo a Pequeños Productores","16480","Formación del Sector Artesanal","$ 459,976.00","","",""));
+        arregloPB.add(new Programas("Apoyo a la Población Indígena","15027","Proyectos Productivos","$ 431,930.00","","",""));
+
+
+
+        datasetPB= new ArrayList<Programas>();
+        datasetPB = arregloPB;
+        recyclerView = (RecyclerView) findViewById(R.id.rv_programas);
+        recyclerView.setHasFixedSize(true);
+        adaptersr = new ResultadosAdaptersr(datasetPB, R.layout.item_list_content_s, SearchActivity.this);//(cobroarraylist, R.layout.cobrador_item_lista);
+        //recyclerView.setAdapter(new CobroAdapter(cobroarraylist, R.layout.cobrador_item_lista));  //cobroarraylist
+        recyclerView.setAdapter(adaptersr);
+        recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
 
     }
 
@@ -290,10 +329,11 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap = googleMap;
 
         // Add a marker in Sydney, Australia, and move the camera.
-        LatLng sydney = new LatLng(19.4326009, -99.1333416);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Ciudad de México, México"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng mexico = new LatLng(19.4326009, -99.1333416);
+        mMap.addMarker(new MarkerOptions().position(mexico).title("Ciudad de México, México"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
+        mMap.animateCamera( CameraUpdateFactory.zoomTo( 5.0f ) );
     }
 
 
-}
+    }
