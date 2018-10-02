@@ -45,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_buscador);
-
+                    startActivity(new Intent(MainActivity.this, SearchActivity.class));
+                    //mTextMessage.setText(R.string.title_buscador);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_programas);
+                    startActivity(new Intent(MainActivity.this, ProgramasActivity.class));
+                    //mTextMessage.setText(R.string.title_programas);
                     return true;
             }
             return false;
