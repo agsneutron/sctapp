@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="450"
+                    android:text="2,980,452"
                     android:textAlignment="center"
                     android:textSize="30dp" />
 
@@ -137,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="450"
+                    android:text="$150,450,550"
                     android:textAlignment="center"
                     android:textSize="30dp" />
 
