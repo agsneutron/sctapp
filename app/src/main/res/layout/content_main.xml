@@ -46,9 +46,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="450"
+                    android:text="239"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
 
                 <ImageView
@@ -93,9 +93,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="450"
+                    android:text="2,458,912"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
 
                 <ImageView
@@ -125,6 +125,7 @@
             android:padding="0dp"
             app:cardElevation="0dp"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteX="2dp">
 
             <LinearLayout
@@ -137,9 +138,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center"
                     android:fontFamily="@font/roboto_thin"
-                    android:text="450"
+                    android:text="$ 450,387,932.00 MX"
                     android:textAlignment="center"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
 
                 <ImageView
@@ -170,43 +171,13 @@
         android:id="@+id/frame_chart"
         android:layout_width="400dp"
         android:layout_height="450dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/topProgramasB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulares"
         tools:context=".MainActivity">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cvsub1"
-            android:layout_width="400dp"
-            android:layout_height="250dp"
-            android:layout_margin="10dp"
-            android:padding="20dp"
-            app:cardElevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/cvC"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|left"
-                android:text="Total de Programas"
-                android:textSize="30dp" />
-
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/bchart"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:id="@+id/tit1"
             android:layout_width="400dp"
@@ -226,28 +197,38 @@
                 android:text="Total Programas"
                 android:textAlignment="center"
                 android:textColor="@color/bg"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:id="@+id/cvC"
             android:layout_width="400dp"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_margin="10dp"
             android:padding="20dp"
             app:cardElevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvsub1">
+            app:layout_constraintTop_toBottomOf="@+id/tit1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bchart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/map"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="200dp"
                 class="com.google.android.gms.maps.SupportMapFragment" />
-
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
     </android.support.constraint.ConstraintLayout>
@@ -265,7 +246,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cvsub2"
             android:layout_width="400dp"
-            android:layout_height="250dp"
+            android:layout_height="100dp"
             android:foregroundGravity="center_horizontal|center"
             app:cardBackgroundColor="@color/colorPrimaryDark"
             app:cardElevation="10dp"
@@ -274,10 +255,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+
             <TextView
                 android:layout_width="400dp"
                 android:layout_height="100dp"
@@ -285,40 +263,50 @@
                 android:text="Beneficiarios por Programa"
                 android:textAlignment="center"
                 android:textColor="@color/bg"
-                android:textSize="18dp" />
-                <com.github.mikephil.charting.charts.HorizontalBarChart
-                    android:id="@+id/bchart3"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-            </LinearLayout>
+                android:textSize="18sp" />
+
+
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cvB"
             android:layout_width="400dp"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_margin="10dp"
-            android:layout_marginTop="64dp"
+            android:padding="20dp"
             app:cardElevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvsub2">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_beneficiarios"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="right|bottom"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="8dp"
-                android:padding="10dp"
-                tools:listitem="@layout/item_list_content">
+                android:orientation="vertical">
 
-            </android.support.v7.widget.RecyclerView>
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/bchart3"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_beneficiarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:padding="10dp"
+                    tools:listitem="@layout/item_list_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
         </android.support.v7.widget.CardView>
     </android.support.constraint.ConstraintLayout>
 
@@ -334,53 +322,55 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cvsub3"
             android:layout_width="400dp"
-            android:layout_height="250dp"
+            android:layout_height="100dp"
             android:foregroundGravity="center_horizontal|center"
             app:cardBackgroundColor="@color/colorPrimaryDark"
             app:cardElevation="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/cvI"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+
             <TextView
                 android:layout_width="400dp"
                 android:layout_height="100dp"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="inversión por Programa"
+                android:text="Inversión por Programa"
                 android:textAlignment="center"
                 android:textColor="@color/bg"
-                android:textSize="18dp" />
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/bchart2"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp" />
-
-            </LinearLayout>
+                android:textSize="18sp" />
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cvI"
             android:layout_width="400dp"
-            android:layout_height="200dp"
+            android:layout_height="400dp"
             android:layout_margin="10dp"
-            android:layout_marginTop="64dp"
+            android:padding="20dp"
             app:cardElevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvsub3">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/bchart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_presupuesto"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="right|bottom"
+                android:layout_height="200dp"
+                android:layout_gravity="end|bottom"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginStart="10dp"
@@ -389,6 +379,8 @@
                 tools:listitem="@layout/item_list_contenti">
 
             </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
         </android.support.v7.widget.CardView>
     </android.support.constraint.ConstraintLayout>
 

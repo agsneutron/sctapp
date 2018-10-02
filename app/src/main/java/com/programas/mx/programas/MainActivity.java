@@ -276,13 +276,13 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         bchart3.setDrawEntryLabels(true);
 
         Legend l3 = bchart3.getLegend();
-        l3.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-        l3.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
-        l3.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l3.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l3.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        l3.setOrientation(Legend.LegendOrientation.HORIZONTAL);
         l3.setDrawInside(false);
         l3.setXEntrySpace(7f);
         l3.setYEntrySpace(0f);
-        l3.setYOffset(0f);
+        l3.setYOffset(5f);
 
 
 

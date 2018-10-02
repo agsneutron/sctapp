@@ -11,15 +11,15 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cvFilters"
-        android:layout_width="0dp"
+        android:layout_width="1212dp"
         android:layout_height="90dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:elevation="100dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/cvTable">
+        app:layout_constraintBottom_toTopOf="@+id/titulotabla">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -72,12 +72,13 @@
                 android:id="@+id/imageButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginRight="8dp"
+                android:padding="20dp"
                 app:layout_constraintStart_toEndOf="@+id/programa"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+                app:srcCompat="@drawable/ic_search_black_24dp"
+                android:background="@android:color/transparent"/>
 
         </android.support.constraint.ConstraintLayout>
 
@@ -85,17 +86,67 @@
     </android.support.v7.widget.CardView>
 
 
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/titulotabla"
+        android:layout_width="600dp"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toStartOf="@+id/cvGraph"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvFilters"
+        app:layout_constraintBottom_toTopOf="@+id/cvTable">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/id_textE"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:text="Programa"
+                android:layout_gravity="start|center"
+                android:textColor="@color/bg"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/contentE"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:textColor="@color/bg"
+                android:textSize="18sp"
+                android:text="Dependencia"/>
+
+            <TextView
+                android:id="@+id/cifraE"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center"
+                android:textColor="@color/bg"
+                android:textSize="18sp"
+                android:text="Beneficiarios"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cvTable"
         android:layout_width="600dp"
-        android:layout_height="550dp"
+        android:layout_height="440dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:elevation="100dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toStartOf="@+id/cvGraph"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvFilters"
+        app:layout_constraintTop_toBottomOf="@+id/titulotabla"
         app:layout_constraintBottom_toBottomOf="parent">
 
 
@@ -121,7 +172,7 @@
         android:layout_height="250dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:elevation="100dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cvTable"
         app:layout_constraintTop_toBottomOf="@+id/cvFilters"
@@ -140,7 +191,7 @@
         android:layout_height="250dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:elevation="100dp"
+        android:elevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cvTable"
         app:layout_constraintTop_toBottomOf="@+id/cvGraph"
