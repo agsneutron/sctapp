@@ -38,7 +38,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class SearchActivity extends MainActivity implements OnMapReadyCallback {
+public class SearchActivity extends MainActivity implements  OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
     SearchableSpinner estado;
     SearchableSpinner municipio;
@@ -63,7 +63,11 @@ public class SearchActivity extends MainActivity implements OnMapReadyCallback {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //MAPA
+        SupportMapFragment mapFragment =
+                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        //
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -73,11 +77,8 @@ public class SearchActivity extends MainActivity implements OnMapReadyCallback {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //MAPA
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        //
+
+
 
 
 
