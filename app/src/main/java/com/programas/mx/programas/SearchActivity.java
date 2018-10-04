@@ -2,6 +2,7 @@ package com.programas.mx.programas;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -14,11 +15,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.programas.mx.programas.domain.Programas;
 
@@ -28,6 +32,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.interfaces.datasets.IPieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +43,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class SearchActivity extends MainActivity implements  OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
+public class SearchActivity extends AppCompatActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
 
     SearchableSpinner estado;
     SearchableSpinner municipio;
@@ -63,13 +68,9 @@ public class SearchActivity extends MainActivity implements  OnMapReadyCallback,
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //MAPA
-        SupportMapFragment mapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        //
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout1);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -77,8 +78,11 @@ public class SearchActivity extends MainActivity implements  OnMapReadyCallback,
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
+        //MAPA
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+        //
 
 
 
@@ -272,7 +276,7 @@ public class SearchActivity extends MainActivity implements  OnMapReadyCallback,
 
         data.setValueTextSize(20f);
         data.setValueTextColor(Color.DKGRAY);
-       // data.setBarWidth(0.9f);
+        // data.setBarWidth(0.9f);
 
         bchart.setTouchEnabled(true);
         bchart.setData(data);
@@ -343,4 +347,8 @@ public class SearchActivity extends MainActivity implements  OnMapReadyCallback,
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
+}

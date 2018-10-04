@@ -71,14 +71,15 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginRight="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/programa"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+                app:srcCompat="@drawable/ic_search_black_24dp"
+                android:background="@android:color/transparent"/>
 
         </android.support.constraint.ConstraintLayout>
 
