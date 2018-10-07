@@ -84,7 +84,8 @@
             android:name=".ProgramasActivity"
             android:label="@string/title_activity_programas"
             android:screenOrientation="sensorLandscape"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:background="@color/bg"/>
         <activity
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
