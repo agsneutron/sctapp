@@ -257,28 +257,16 @@ tools:ignore="MergeRootFrame">
 ejecución en las siguientes vertientes:
 1.Infraestructura para el Hábitat Infraestructura para el Hábitat Infraestructura para el Hábitat
 1.1. Modalidad Mejoramiento del Entorno.
-Modalidad Mejoramiento del Entorno.
-Apoyos para la realización de obras de construcción o mejoramiento de infraestructura básica, complementaria y equipamiento urbano, obras para la conectividad y accesibilidad, así como para la construcción, ampliación, habilitación y/o equipamiento de Centros de Desarrollo Comunitario y obras para la protección, conservación y revitalización de Centros Históricos.
 1.2. Modalidad Desarrollo Comunitario.
-Modalidad Desarrollo Comunitario.
-Impulsa y fortalece el desarrollo las personas y su comunidad a través de la implementación de acciones comunitarias, como la implementación de cursos y talleres.
 1.3. Modalidad Promoción del Desarrollo Urbano.
-Impulsa la realización de planes o Urbano. programas de desarrollo urbano de centros de población y programas parciales de crecimiento, de centros históricos, de puerto
-La vertiente Infraestructura para el Hábitat requiere de la aprobación del gobierno estatal Catálogo de Programas Federales para Municipios 2018 16 fronterizo, de sistema puerto-ciudad, de zona industrial; así como proyectos ejecutivos de gestión integral de riesgos.
 2. Espacios Públicos y Participación Comunitaria Espacios Públicos y Participación Comunitaria Impulsa la construcción, ampliación, habilitación o rehabilitación de espacios públicos de uso comunitario, para el desarrollo de actividades recreativas, culturales, turísticas, deportivas que favorezcan procesos de activación, convivencia y cohesión social comunitaria, obras de movilidad sustentable con sentido de accesibilidad universal; así como obras para la rehabilitación, habilitación y/o remozamiento de unidades habitacionales.
 2.1. Modalidad Habilitación y Rescate de Modalidad Habilitación y Rescate de Espacios Públicos.
-Impulsa la construcción, Espacios Públicos. ampliación, habilitación o rehabilitación de espacios públicos de uso comunitario, para el desarrollo de actividades recreativas, culturales, turísticas, deportivas
 2.2. Modalidad Rescate de Unidades Modalidad Rescate de Unidades Habitacionales.
-Impulsar la rehabilitación, habilitación o equipamiento de las áreas y bienes de uso común que se encuentran en las unidades y desarrollos habitacionales con deterioro o inseguridad.
 2.3. Modalidad Ciudad de las Mujeres.
-Espacios Modalidad Ciudad de las Mujeres. destinados a la construcción y habilitación de centros integrales para servir a la mujer, que promuevan el ejercicio de los derechos humanos de las mujeres, mujeres jóvenes y niñas, desde un Modelo de Servicios Integrales para el Empoderamiento de Mujeres bajo un mismo techo.
 3. Mejoramiento de la Vivienda Mejoramiento de la Vivienda Se destinarán apoyos para obras y acciones de mejoramiento de la vivienda en población en situación de pobreza y con carencia por calidad y espacios en la vivienda. La vertiente cuenta con las siguientes
 modalidades:
-3.1 Modalidad Ampliación de la Vivienda: 3.1 Modalidad Ampliación de la Vivienda: Modalidad Ampliación de la Vivienda:
-Apoyar la construcción o instalación de un cuarto adicional, en viviendas cuyos habitantes presenten hacinamiento.
-3.2 Modalidad Equipamiento de la Vivienda 3.2 Modalidad Equipamiento de la Vivienda Modalidad Equipamiento de la Vivienda:
-Apoyar la instalación de estufas ecológicas, en aquellas viviendas con carencia por combustible. "
-
+3.1 Modalidad Ampliación de la Vivienda
+3.2 Modalidad Equipamiento de la Vivienda Modalidad Equipamiento de la Vivienda"
                 android:textSize="12sp" />
 
             <TextView

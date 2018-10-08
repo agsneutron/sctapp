@@ -1,5 +1,6 @@
 package com.programas.mx.programas;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +47,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class SearchActivity extends AppCompatActivity implements OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
+public class SearchActivity extends MainActivity implements OnMapReadyCallback {
 
     SearchableSpinner estado;
     SearchableSpinner municipio;
@@ -72,6 +74,23 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
         setSupportActionBar(toolbar);
 
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+        //MAPA
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapto);
+        mapFragment.getMapAsync(this);
+        //
+
+
         imSearch = (ImageButton) findViewById(R.id.imageButton);
         imSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,22 +104,6 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
             }
         });
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout1);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        //MAPA
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        //
-
-
 
         estado = findViewById(R.id.estado);
         municipio = findViewById(R.id.municipio);
@@ -379,10 +382,6 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
-    }
 
     public void showresult(GoogleMap googleMap){
 
@@ -459,4 +458,7 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
     }
+
+
+
 }
