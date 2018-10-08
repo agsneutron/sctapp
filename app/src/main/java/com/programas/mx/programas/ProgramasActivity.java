@@ -1,5 +1,6 @@
 package com.programas.mx.programas;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -68,7 +69,10 @@ public class ProgramasActivity extends MainActivity {
 
     }
 
-
+    public void buttonClick(View view){
+        Intent mintent = new Intent(ProgramasActivity.this, ItemDetailActivity.class);
+        startActivity(mintent);
+    }
 
 
     /**

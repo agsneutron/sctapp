@@ -61,7 +61,7 @@
         <activity
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -83,14 +83,15 @@
             android:screenOrientation="sensorLandscape" />
         <activity
             android:name=".ProgramasActivity"
+            android:background="@color/bg"
             android:label="@string/title_activity_programas"
             android:screenOrientation="sensorLandscape"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:background="@color/bg"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DetalleActivity"></activity>
     </application>
 
 </manifest>
