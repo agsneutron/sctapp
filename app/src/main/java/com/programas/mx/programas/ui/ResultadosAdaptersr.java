@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.programas.mx.programas.DetalleActivity;
 import com.programas.mx.programas.MainActivity;
 import com.programas.mx.programas.R;
 import com.programas.mx.programas.domain.Programas;
@@ -114,30 +115,34 @@ public class ResultadosAdaptersr extends RecyclerView.Adapter<ResultadosAdapters
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()){
-                case R.id.id_text:
-                    //int pos = getAdapterPosition();
-                    //String cp = resultados.get(pos).getClave_catastral();
-                    //Log.e("ID",String.valueOf(view.getId()));
-                    Intent intentc = new Intent(context, MainActivity.class);
-                    intentc.putExtra("clave", lprograma.getText().toString());
-                    context.startActivity(intentc);
-                    break;
-                case R.id.content:
-                    Intent intentv = new Intent(context, MainActivity.class);
-                    intentv.putExtra("clave", lprograma.getText().toString());
-                    intentv.putExtra("cp",lbeneficiarios.getText().toString());
-                    context.startActivity(intentv);
-                    break;
+            if (lprograma.getText().toString().equals("Programa de Infraestructura")) {
+                switch (view.getId()) {
 
-                case R.id.dependencia:
-                    Intent intentd = new Intent(context, MainActivity.class);
-                    intentd.putExtra("clave", lprograma.getText().toString());
-                    intentd.putExtra("cp",lbeneficiarios.getText().toString());
-                    context.startActivity(intentd);
-                    break;
+                    case R.id.id_text:
+                        //int pos = getAdapterPosition();
+                        //String cp = resultados.get(pos).getClave_catastral();
+                        //Log.e("ID",String.valueOf(view.getId()));
+                        Intent intentc = new Intent(context, DetalleActivity.class);
+                        intentc.putExtra("clave", lprograma.getText().toString());
+                        context.startActivity(intentc);
+                        break;
+                    case R.id.content:
+                        Intent intentv = new Intent(context, DetalleActivity.class);
+                        intentv.putExtra("clave", lprograma.getText().toString());
+                        intentv.putExtra("cp", lbeneficiarios.getText().toString());
+                        context.startActivity(intentv);
+                        break;
+
+                    case R.id.dependencia:
+                        Intent intentd = new Intent(context, DetalleActivity.class);
+                        intentd.putExtra("clave", lprograma.getText().toString());
+                        intentd.putExtra("cp", lbeneficiarios.getText().toString());
+                        context.startActivity(intentd);
+                        break;
+
+                }
+                ((Activity) context).finish();
             }
-            ((Activity)context).finish();
         }
     }
 

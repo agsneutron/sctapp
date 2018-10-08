@@ -55,7 +55,7 @@
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="admin@gmail.com"/>
+                        android:text=""/>
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -74,7 +74,7 @@
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="passpass"/>
+                        android:text=""/>
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -87,6 +87,7 @@
                     android:textColor="#ffffff"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:background="@color/colorPrimaryDark"
                     android:theme="@style/Button1Style" />
 
             </LinearLayout>

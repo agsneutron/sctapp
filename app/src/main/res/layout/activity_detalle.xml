@@ -16,350 +16,405 @@
         android:fitsSystemWindows="true"
         tools:context="com.programas.mx.programas.ProgramasActivity">
 
-        <ScrollView
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="750dp"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingTop="80dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="90dp">
+                android:layout_height="750dp"
+                android:orientation="horizontal"
+                tools:layout_editor_absoluteY="64dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    tools:layout_editor_absoluteY="64dp">
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvGraph"
+                    android:layout_width="350dp"
+                    android:layout_height="750dp"
+                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
+                    app:cardElevation="10dp">
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/cvGraph"
-                        android:layout_width="350dp"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:elevation="100dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        tools:layout_editor_absoluteY="0dp">
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/textViewTitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center"
+                            android:text="PROGRAMA DE INFRAESTRUCTURA"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="PROGRAMA DE INFRAESTRUCTURA" />
+
+                        <TextView
+                            android:id="@+id/textViewSubtitulo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Secretaría de Desarrollo Agrario, Territorial y Urbano "
+                            android:textAlignment="center" />
+
+                        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/map3"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:layout_margin="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            class="com.google.android.gms.maps.SupportMapFragment" />
+
+                        <TextView
+                            android:id="@+id/TextViewObjetivo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Objetivo"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/TextViewObjetivoText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Contribuir a mejorar las condiciones de habitabilidad de los hogares asentados en las Zonas de Actuación del Programa a través del desarrollo de proyectos de infraestructura básica, complementaria, equipamiento urbano y mejoramiento de la vivienda. " />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/textViewTitulo"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="0dp"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginRight="15dp"
-                                android:layout_marginTop="15dp"
-                                android:gravity="center"
-                                android:text="PROGRAMA DE INFRAESTRUCTURA"
-                                android:textAlignment="center"
-                                android:textColor="@color/colorPrimary"
-                                android:textSize="18sp"
-                                android:textStyle="bold"
-                                tools:text="PROGRAMA DE INFRAESTRUCTURA" />
-
-                            <TextView
-                                android:id="@+id/textViewSubtitulo"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="Secretaría de Desarrollo Agrario, Territorial y Urbano "
-                                android:textAlignment="center" />
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/imageView10"
-                                android:layout_width="match_parent"
-                                android:layout_height="180dp"
-                                android:src="@drawable/captura" />
-
-                            <TextView
-                                android:id="@+id/TextViewObjetivo"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:id="@+id/imageViewPlace"
+                                android:layout_width="80dp"
+                                android:layout_height="55dp"
                                 android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="10dp"
-                                android:text="Objetivo"
-                                android:textColor="@color/colorPrimary" />
-
-                            <TextView
-                                android:id="@+id/TextViewObjetivoText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="Contribuir a mejorar las condiciones de habitabilidad de los hogares asentados en las Zonas de Actuación del Programa a través del desarrollo de proyectos de infraestructura básica, complementaria, equipamiento urbano y mejoramiento de la vivienda. " />
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_place_black_24dp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
 
-                                <ImageView
-                                    android:id="@+id/imageViewPlace"
-                                    android:layout_width="80dp"
-                                    android:layout_height="55dp"
+                                <TextView
+                                    android:id="@+id/textViewCobertura"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/ic_place_black_24dp" />
+                                    android:text="Cobertura"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp" />
 
-                                <LinearLayout
+                                <TextView
+                                    android:id="@+id/textViewCoberturaText"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/textViewCobertura"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:text="Cobertura"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="16sp" />
-
-                                    <TextView
-                                        android:id="@+id/textViewCoberturaText"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:text="Nivel Nacional" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:layout_marginBottom="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@android:color/darker_gray" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/imageViewGente"
-                                    android:layout_width="80dp"
-                                    android:layout_height="85dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
                                     android:layout_weight="1"
-                                    app:srcCompat="@drawable/ic_nature_people_black_24dp" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/textViewBeneficio"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:text="Beneficiarios"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="16sp" />
-
-                                    <TextView
-                                        android:id="@+id/textViewBeneficioText"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:text="Hogares asentados en Áreas Geoestadíscas Básicas (AGEB) urbanas y localidades menores de 5 mil habitantes" />
-                                </LinearLayout>
+                                    android:text="Nivel Nacional" />
                             </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:layout_marginBottom="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@android:color/darker_gray" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/imageViewMonkey"
-                                    android:layout_width="80dp"
-                                    android:layout_height="55dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:layout_weight="1"
-                                    app:srcCompat="@drawable/ic_attach_money_black_24dp" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/textViewInversion"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:text="Inversion"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="16sp" />
-
-                                    <TextView
-                                        android:id="@+id/textViewInversionText"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:text="$4,000,000.00" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:layout_marginBottom="5dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@android:color/darker_gray" />
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/cvGraph22"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:elevation="100dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        tools:layout_editor_absoluteY="0dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@android:color/darker_gray" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageViewGente"
+                                android:layout_width="80dp"
+                                android:layout_height="85dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_nature_people_black_24dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textViewBeneficio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:text="Beneficiarios"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textViewBeneficioText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:text="1,924"
+                                    android:textSize="15dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@android:color/darker_gray" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageViewMonkey"
+                                android:layout_width="80dp"
+                                android:layout_height="55dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="1"
+                                app:srcCompat="@drawable/ic_attach_money_black_24dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textViewInversion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:text="Inversion"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/textViewInversionText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_weight="1"
+                                    android:text="$4,000,000.00" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@android:color/darker_gray" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvGraph22"
+                    android:layout_width="850dp"
+                    android:layout_height="700dp"
+                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/b"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="0dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="10dp"
+                            app:cardElevation="10dp">
 
                             <TextView
                                 android:id="@+id/TextViewCobertura"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="10dp"
-                                android:text="Cobertura"
-                                android:textColor="@color/colorPrimary" />
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"
+                                android:gravity="left|center_vertical"
+                                android:text="Alcance"
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/TextViewCoberturaText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="El Programa tendrá una cobertura a nivel nacional a partir de los criterios señalados en cada vertiente del programa"
+                            android:textSize="12sp" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/a"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="0dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="10dp"
+                            app:cardElevation="10dp">
 
                             <TextView
-                                android:id="@+id/TextViewCoberturaText"
+                                android:id="@+id/TextViewPB"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="El Programa tendrá una cobertura a nivel nacional a partir de los criterios señalados en cada vertiente del programa"
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/TextViewCPob"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"
+                                android:gravity="left|center_vertical"
                                 android:text="Población Beneficiaria"
-                                android:textColor="@color/colorPrimary" />
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/TextViewPobText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Hogares asentados en Áreas Geoestadíscas Básicas (AGEB) urbanas y localidades menores de 5 mil habitantes que presentan medio, alto y muy alto déficit en condiciones de habitabilidad. "
+                            android:textSize="12sp" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/c"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="0dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="10dp"
+                            app:cardElevation="10dp">
 
                             <TextView
-                                android:id="@+id/TextViewPobText"
+                                android:id="@+id/TextViewDes"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="Hogares asentados en Áreas Geoestadíscas Básicas (AGEB) urbanas y localidades menores de 5 mil habitantes que presentan medio, alto y muy alto déficit en condiciones de habitabilidad. "
-                                android:textSize="12sp" />
-
-                            <TextView
-                                android:id="@+id/TextViewObjetivo2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="10dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"
+                                android:gravity="left|center_vertical"
                                 android:text="Descripción"
-                                android:textColor="@color/colorPrimary" />
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/TextViewObjetivoText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="left"
+                            android:text="El Programa de infraestructura se dividirá, para su ejecución en las siguientes vertientes:\n 1.Infraestructura para el Hábitat:\n 1.1. Modalidad Mejoramiento del Entorno.\n 1.2. Modalidad Desarrollo Comunitario.\n 1.3. Modalidad Promoción del Desarrollo Urbano.\n 2. Espacios Públicos y Participación Comunitaria.\n 2.1. Modalidad Habilitación y Rescate de Modalidad Habilitación y Rescate de Espacios Públicos.\n 2.2. Modalidad Rescate de Unidades Modalidad Rescate de Unidades Habitacionales.\n 2.3. Modalidad Ciudad de las Mujeres.\n 3. Mejoramiento de la Vivienda  \n 3.1 Modalidad Ampliación de la Vivienda\n 3.2 Modalidad Equipamiento de la Vivienda Modalidad Equipamiento de la Vivienda"
+                            android:textSize="12sp" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/d"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="0dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="10dp"
+                            app:cardElevation="10dp">
 
                             <TextView
-                                android:id="@+id/TextViewObjetivoText2"
+                                android:id="@+id/TextViewTC"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="El Programa de infraestructura se dividirá, para su ejecución en las siguientes vertientes:\n\n
-        1.Infraestructura para el Hábitat Infraestructura para el Hábitat Infraestructura para el Hábitat\n
-        1.1. Modalidad Mejoramiento del Entorno.\n
-        Modalidad Mejoramiento del Entorno.\n
-        Apoyos para la realización de obras de construcción o mejoramiento de infraestructura básica, complementaria y equipamiento urbano, obras para la conectividad y accesibilidad, así como para la construcción, ampliación, habilitación y/o equipamiento de Centros de Desarrollo Comunitario y obras para la protección, conservación y revitalización de Centros Históricos.\n
-        1.2. Modalidad Desarrollo Comunitario.\n
-        Modalidad Desarrollo Comunitario.\n
-        Impulsa y fortalece el desarrollo las personas y su comunidad a través de la implementación de acciones comunitarias, como la implementación de cursos y talleres.
-        1.3. Modalidad Promoción del Desarrollo Urbano.\n
-        Impulsa la realización de planes o Urbano. programas de desarrollo urbano de centros de población y programas parciales de crecimiento, de centros históricos, de puerto\n
-        La vertiente Infraestructura para el Hábitat requiere de la aprobación del gobierno estatal Catálogo de Programas Federales para Municipios 2018 16 fronterizo, de sistema puerto-ciudad, de zona industrial; así como proyectos ejecutivos de gestión integral de riesgos.\n
-        2. Espacios Públicos y Participación Comunitaria Espacios Públicos y Participación Comunitaria Impulsa la construcción, ampliación, habilitación o rehabilitación de espacios públicos de uso comunitario, para el desarrollo de actividades recreativas, culturales, turísticas, deportivas que favorezcan procesos de activación, convivencia y cohesión social comunitaria, obras de movilidad sustentable con sentido de accesibilidad universal; así como obras para la rehabilitación, habilitación y/o remozamiento de unidades habitacionales.\n
-        2.1. Modalidad Habilitación y Rescate de Modalidad Habilitación y Rescate de Espacios Públicos.\n
-        Impulsa la construcción, Espacios Públicos. ampliación, habilitación o rehabilitación de espacios públicos de uso comunitario, para el desarrollo de actividades recreativas, culturales, turísticas, deportivas\n
-        2.2. Modalidad Rescate de Unidades Modalidad Rescate de Unidades Habitacionales.\n
-        Impulsar la rehabilitación, habilitación o equipamiento de las áreas y bienes de uso común que se encuentran en las unidades y desarrollos habitacionales con deterioro o inseguridad.\n
-        2.3. Modalidad Ciudad de las Mujeres.\n
-        Espacios Modalidad Ciudad de las Mujeres. destinados a la construcción y habilitación de centros integrales para servir a la mujer, que promuevan el ejercicio de los derechos humanos de las mujeres, mujeres jóvenes y niñas, desde un Modelo de Servicios Integrales para el Empoderamiento de Mujeres bajo un mismo techo.\n
-        3. Mejoramiento de la Vivienda Mejoramiento de la Vivienda Se destinarán apoyos para obras y acciones de mejoramiento de la vivienda en población en situación de pobreza y con carencia por calidad y espacios en la vivienda. La vertiente cuenta con las siguientes\n
-        modalidades:\n\n
-        3.1 Modalidad Ampliación de la Vivienda: 3.1 Modalidad Ampliación de la Vivienda: Modalidad Ampliación de la Vivienda:\n
-        Apoyar la construcción o instalación de un cuarto adicional, en viviendas cuyos habitantes presenten hacinamiento.\n
-        3.2 Modalidad Equipamiento de la Vivienda 3.2 Modalidad Equipamiento de la Vivienda Modalidad Equipamiento de la Vivienda:\n
-        Apoyar la instalación de estufas ecológicas, en aquellas viviendas con carencia por combustible. "
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"
+                                android:gravity="left|center_vertical"
+                                android:text="Tipo y Características de Apoyo"
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.CardView>
 
-                                android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/TextViewObjetivoText3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Mejoramiento del
+entorno : Introducción o mejoramiento de infraestructura
+básica, complementaria, equipamiento y
+equipamiento urbano; vialidades con los elementos
+mínimos que mejoren la accesibilidad y
+conectividad, seguridad de peatones, ciclistas y
+usuarios del transporte; Centros de Desarrollo
+Comunitario; protección, conservación y
+revitalización de centros históricos. "
+
+                            android:textSize="12sp" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/f"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="0dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="10dp"
+                            app:cardElevation="10dp">
 
                             <TextView
-                                android:id="@+id/TextViewObjetivo3"
+                                android:id="@+id/TextViewObsr"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:layout_marginTop="10dp"
-                                android:text="Objetivo"
-                                android:textColor="@color/colorPrimary" />
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimaryDark"
+                                android:gravity="left|center_vertical"
+                                android:text="Observaciones"
+                                android:textColor="@android:color/white"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+                        </android.support.v7.widget.CardView>
 
-                            <TextView
-                                android:id="@+id/TextViewObjetivoText3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:text="Contribuir a mejorar las condiciones de habitabilidad de los hogares asentados en las Zonas de Actuación del Programa a través del desarrollo de proyectos de infraestructura básica, complementaria, equipamiento urbano y mejoramiento de la vivienda. Los objetivos específicos son:\n\n
-        • Apoyar el desarrollo de obras de infraestructura básica, complementaria y equipamiento urbano, así como acciones para el desarrollo comunitario y la promoción del desarrollo urbano, en el ámbito rural, urbano y núcleos agrarios;\n
-        • Apoyar la ejecución de proyectos para el rescate, habilitación o rehabilitación de espacios públicos, unidades o desarrollos habitacionales y centros integrales de atención a las Mujeres, mejorando la accesibilidad y conectividad a equipamientos y servicios;\n
-        • Apoyar la realización de obras, acciones y servicios para la ampliación y/o equipamiento de la vivienda.
-        "
-
-                                android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/TextViewObText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="La vertiente Infraestructura para el Hábitat requiere de la aprobación del gobierno estatal "
+                            android:textSize="12sp" />
 
 
-                        </LinearLayout>
-                    </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
 
-                </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
+
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
