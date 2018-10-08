@@ -70,7 +70,7 @@ public class ProgramasActivity extends MainActivity {
     }
 
     public void buttonClick(View view){
-        Intent mintent = new Intent(ProgramasActivity.this, ItemDetailActivity.class);
+        Intent mintent = new Intent(ProgramasActivity.this, DetalleActivity.class);
         startActivity(mintent);
     }
 

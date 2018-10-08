@@ -91,7 +91,12 @@
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetalleActivity"></activity>
+        <activity android:name=".DetalleActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.programas.mx.programas.ProgramasActivity" />
+        </activity>
     </application>
 
 </manifest>
