@@ -463,7 +463,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         LatLng ch = new LatLng(16.75, -93.1167);
         mMap.addMarker(new MarkerOptions().position(ch).title("Chiapas, México"));
 
-        LatLng gr = new LatLng(16.775, -93.7417);
+        LatLng gr = new LatLng(18.775, -103.8375);
         mMap.addMarker(new MarkerOptions().position(gr).title("Guerrero, México"));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
