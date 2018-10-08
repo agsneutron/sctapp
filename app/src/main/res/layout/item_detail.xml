@@ -17,7 +17,8 @@ tools:ignore="MergeRootFrame">
         android:id="@+id/cvGraph"
         android:layout_width="350dp"
         android:layout_height="match_parent"
-        android:elevation="100dp"
+        android:elevation="10dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="0dp">
 
@@ -223,7 +224,8 @@ tools:ignore="MergeRootFrame">
         android:id="@+id/cvGraph22"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="100dp"
+        android:elevation="10dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="0dp">
@@ -233,6 +235,7 @@ tools:ignore="MergeRootFrame">
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:orientation="vertical">
+
 
 
             <TextView

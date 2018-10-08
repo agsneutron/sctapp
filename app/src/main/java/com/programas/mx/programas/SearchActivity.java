@@ -390,11 +390,11 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
         PieChart bchart = (PieChart) findViewById(R.id.bchart);
 
         List<PieEntry> entries = new ArrayList<>();
-
+        entries.add(new PieEntry(1924.0f, "Programa de Infraestructura"));
         entries.add(new PieEntry(570.0f, "Nutrición con Valor"));
         entries.add(new PieEntry(983.0f, "Tu Empleo Formal"));
         entries.add(new PieEntry(482.0f, "Apoyo al Estudiante"));
-        entries.add(new PieEntry(1872.0f, "Apoyo a Mujeres Jefas de Familia"));
+        entries.add(new PieEntry(372.0f, "Apoyo a Mujeres Jefas de Familia"));
 
         PieDataSet set = new PieDataSet(entries, "Miles de Beneficiarios por Programa");
         PieData data = new PieData(set);
@@ -434,10 +434,11 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
         ArrayList<Programas> arregloPB = new ArrayList<>();
-        arregloPB.add(new Programas("Nutrición con Valor","570", "Beca Deportiva","$ 893,125.00","","",""));
-        arregloPB.add(new Programas("Tu Empleo Formal","983", "Apoyo a la Población Vulnerable","$ 564,235.00","","",""));
-       arregloPB.add(new Programas("Apoyo al Estudiante","482", "Tu Empleo Formal","$ 635,213.00","","",""));
-        arregloPB.add(new Programas("Apoyo a Mujeres Jefas de Familia","1872","Asistencia Social a la Comunidad","$ 357,239.00","","",""));
+        arregloPB.add(new Programas("Programa de Infraestructura","1,924", "Secretaria de Desarrollo Agrario, Territorial y Urbano","$ 893,125.00","","",""));
+        arregloPB.add(new Programas("Nutrición con Valor","570", "Secretaria de Salud","$ 893,125.00","","",""));
+        arregloPB.add(new Programas("Tu Empleo Formal","983", "Comite de Apoyo a la Población Vulnerable","$ 564,235.00","","",""));
+        arregloPB.add(new Programas("Apoyo al Estudiante","482", "Comisión Nacional para el Desarrollo de los Pueblos Indígenas","$ 635,213.00","","",""));
+        arregloPB.add(new Programas("Apoyo a Mujeres Jefas de Familia","372","Secretaria de Desarrollo Social","$ 357,239.00","","",""));
 
 
 
