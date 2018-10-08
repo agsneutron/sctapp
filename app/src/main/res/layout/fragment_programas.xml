@@ -199,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Inversion"
+                        android:text="Inversión"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp" />
 
@@ -209,7 +209,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="$4,000,000.00" />
+                        android:text="$12,050,000.00" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -257,19 +257,19 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:text="PROGRAMA DE INFRAESTRUCTURA"
+                android:text="CENTROS PODER JOVEN "
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="PROGRAMA DE INFRAESTRUCTURA" />
+                tools:text="CENTROS PODER JOVEN " />
 
             <TextView
                 android:id="@+id/textViewSubtitulo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Secretaría de Desarrollo Agrario, Territorial y Urbano "
+                android:text="Instituto Mexicano de la Juventud "
                 android:textAlignment="center" />
 
             <ImageView
@@ -293,7 +293,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Contribuir a mejorar las condiciones de habitabilidad de los hogares asentados en las Zonas de Actuación del Programa a través del desarrollo de proyectos de infraestructura básica, complementaria, equipamiento urbano y mejoramiento de la vivienda. "
+                android:text="Fortalecer en coinversión con los estados y municipios los centros de atención, prevención y formación dirigidos a la población juvenil. Orientado a la operación de los Centros poder Joven ya existentes así como a la creación de nuevos Centros Poder Joven "
                 android:textAlignment="viewStart" />
 
             <LinearLayout
@@ -331,7 +331,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Nivel Nacional" />
+                        android:text="Nacional, instancias Municipales de juventud. " />
                 </LinearLayout>
 
             </LinearLayout>
@@ -378,7 +378,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Hogares asentados en Áreas Geoestadíscas Básicas (AGEB) urbanas y localidades menores de 5 mil habitantes" />
+                        android:text="Población juvenil (es aquella considerada en un rango de edad entre los 12 y los 29 años). " />
                 </LinearLayout>
             </LinearLayout>
 
@@ -414,7 +414,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Inversion"
+                        android:text="Inversión"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp" />
 
@@ -424,7 +424,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="$4,000,000.00" />
+                        android:text="$3,085,000.00" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -470,19 +470,19 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:text="PROGRAMA DE INFRAESTRUCTURA"
+                android:text="PROGRAMA DE COMEDORES COMUNITARIOS "
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:text="PROGRAMA DE INFRAESTRUCTURA" />
+                tools:text="PROGRAMA DE COMEDORES COMUNITARIOS " />
 
             <TextView
                 android:id="@+id/textViewSubtitulo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Secretaría de Desarrollo Agrario, Territorial y Urbano "
+                android:text="Secretaría de Desarrollo Social"
                 android:textAlignment="center" />
 
             <ImageView
@@ -493,7 +493,7 @@
 
             <TextView
                 android:id="@+id/TextViewObjetivo3"
-                android:layout_width="match_parent"
+                android:layout_width="376dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -506,7 +506,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Contribuir a mejorar las condiciones de habitabilidad de los hogares asentados en las Zonas de Actuación del Programa a través del desarrollo de proyectos de infraestructura básica, complementaria, equipamiento urbano y mejoramiento de la vivienda. "
+                android:text="Contribuir a fortalecer el cumplimiento efectivo de los derechos sociales que potencien las capacidades de las personas en situación de pobreza, a través de acciones que inciden positivamente en la alimentación, salud y educación por medio de la reducción de la inseguridad alimentaria. "
                 android:textAlignment="viewStart" />
 
             <LinearLayout
@@ -544,7 +544,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Nivel Nacional" />
+                        android:text="Nivel Nacional, Zonas de Atención Prioritaria" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -591,7 +591,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Hogares asentados en Áreas Geoestadíscas Básicas (AGEB) urbanas y localidades menores de 5 mil habitantes" />
+                        android:text="La población que habita en territorios urbanos y rurales.  localidades con una población mayor a 200 y menor a 2,500 habitantes " />
                 </LinearLayout>
             </LinearLayout>
 
@@ -627,7 +627,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="Inversion"
+                        android:text="Inversión"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp" />
 
@@ -637,7 +637,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="$4,000,000.00" />
+                        android:text="$8,290,000.00" />
                 </LinearLayout>
 
             </LinearLayout>
