@@ -51,7 +51,7 @@ public class Splashscreen extends AppCompatActivity {
                     }
                     Intent intent = new Intent(Splashscreen.this,
 //  quitar para produccion de login                          Login.class);
-                            LoginActivity.class);
+                            MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     Splashscreen.this.finish();

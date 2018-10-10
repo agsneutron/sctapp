@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -47,6 +48,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.programas.mx.programas.domain.ProgramasBeneficiarios;
 import com.programas.mx.programas.domain.ProgramasInversion;
@@ -58,6 +60,7 @@ import com.programas.mx.programas.ui.ResultadosAdapterI;
 public class MainActivity extends AppCompatActivity implements OnChartValueSelectedListener, OnMapReadyCallback, NavigationView.OnNavigationItemSelectedListener {
     private TextView mTextMessage;
     private GoogleMap mMap;
+    private Marker marker_mx;
 
     ArrayList<ProgramasBeneficiarios> datasetPB;
     ArrayList<ProgramasInversion> datasetPI;
@@ -468,6 +471,28 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
         mMap.animateCamera( CameraUpdateFactory.zoomTo( 4.0f ) );
-    }
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            /**
+             * handle marker click event
+             */
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                // TODO Auto-generated method stub
+
+                Log.w("Click", marker.getTitle().toString());
+                if(marker.equals(marker_mx)){
+                    Log.w("Click", "MX");
+                    return true;
+                }
+                return false;
+
+
+            }
+        });
+
+   }
+
+
 }
 
