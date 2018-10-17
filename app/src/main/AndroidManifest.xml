@@ -18,30 +18,31 @@
     <application
         android:allowBackup="true"
         android:background="@color/bg"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ItemListActivity"
+            android:name="com.SCT.mx.SCT.ItemListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ItemDetailActivity"
+            android:name="com.SCT.mx.SCT.ItemDetailActivity"
             android:label="@string/title_item_detail"
-            android:parentActivityName=".ItemListActivity"
+            android:parentActivityName="com.SCT.mx.SCT.ItemListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programas.mx.programas.ItemListActivity" />
+                android:value="com.SCT.mx.SCT.ItemListActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.SCT.mx.SCT.MainActivity"
             android:label="@string/title_activity_main"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Splashscreen"
+            android:name="com.SCT.mx.SCT.Splashscreen"
             android:label="@string/app_name"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar">
@@ -52,15 +53,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name="com.SCT.mx.SCT.LoginActivity"
             android:label="@string/title_activity_login"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name=".Main2Activity"
+            android:name="com.SCT.mx.SCT.Main2Activity"
             android:label="@string/title_activity_main2" />
         <activity
-            android:name=".SearchActivity"
+            android:name="com.SCT.mx.SCT.SearchActivity"
             android:label="@string/title_activity_search"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -78,35 +80,55 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name="com.SCT.mx.SCT.MapsActivity"
             android:label="@string/title_activity_maps"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name=".ProgramasActivity"
+            android:name="com.SCT.mx.SCT.ProgramasActivity"
             android:background="@color/bg"
             android:label="@string/title_activity_programas"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Main3Activity"
+            android:name="com.SCT.mx.SCT.Main3Activity"
             android:label="@string/title_activity_main3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".DetalleActivity"
+            android:name="com.SCT.mx.SCT.DetalleActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.SCT.mx.SCT.Beneficiarios"
+            android:label="@string/title_activity_beneficiarios"
+            android:parentActivityName="com.SCT.mx.SCT.ProgramasActivity"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programas.mx.programas.ProgramasActivity" />
+                android:value="com.SCT.mx.SCT.ProgramasActivity" />
         </activity>
         <activity
-            android:name=".Beneficiarios"
-            android:label="@string/title_activity_beneficiarios"
-            android:parentActivityName=".ProgramasActivity"
+            android:name="com.SCT.mx.SCT.Infraestructura"
+            android:label="@string/title_activity_infraestructura"
+            android:parentActivityName="com.SCT.mx.SCT.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.programas.mx.programas.ProgramasActivity" />
+                android:value="com.SCT.mx.SCT.MainActivity" />
         </activity>
+        <activity
+            android:name="com.SCT.mx.SCT.Anticorrupcion"
+            android:label="@string/title_activity_anticorrupcion"
+            android:parentActivityName="com.SCT.mx.SCT.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.SCT.mx.SCT.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.SCT.mx.SCT.FichaTecnica"
+            android:label="@string/title_activity_ficha_tecnica"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

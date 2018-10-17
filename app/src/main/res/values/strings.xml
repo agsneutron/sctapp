@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Tablero de Control para Programas</string>
+    <string name="app_name">SCT</string>
     <string name="title_item_detail">Item Detail</string>
-    <string name="title_activity_main">Tablero de Control para Programas</string>
+    <string name="title_activity_main">SCT</string>
     <string name="title_activity_login">Acceso a Tablero</string>
 
     <!-- Strings related to login -->
@@ -30,4 +30,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_beneficiarios">Beneficiarios</string>
+    <string name="title_activity_infraestructura">Infraestructura</string>
+    <string name="title_activity_anticorrupcion">Anticorrupcion</string>
+    <string name="title_activity_ficha_tecnica">FichaTecnica</string>
 </resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.SCT.mx.SCT.Infraestructura"
+    tools:showIn="@layout/activity_infraestructura">
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/i_map"
+        android:layout_width="640dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/i_graph"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/i_graph"
+        android:layout_width="640dp"
+        android:layout_height="400dp"
+        app:layout_constraintStart_toEndOf="@+id/i_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/i_list">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/i_bchart"
+            android:layout_width="318dp"
+            android:layout_height="310dp" />
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:id="@+id/i_list"
+        android:layout_width="640dp"
+        android:layout_height="400dp"
+        app:layout_constraintStart_toEndOf="@+id/i_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/i_graph"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_list_inf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|bottom"
+            android:padding="10dp"
+            tools:listitem="@layout/item_list_contenti">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

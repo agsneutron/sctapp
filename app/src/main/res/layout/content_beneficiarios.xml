@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.programas.mx.programas.Beneficiarios"
+    tools:context="com.SCT.mx.SCT.Beneficiarios"
     tools:showIn="@layout/activity_beneficiarios">
 
     <android.support.v7.widget.CardView
@@ -29,7 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="FOLIO"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="NOMBRE"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="APELLIDO PATERNO"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -59,7 +59,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="APELLIDO MATERNO"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -69,7 +69,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="DOMICILIO"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -80,7 +80,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="CURP"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -90,7 +90,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="COMPROBANTE"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -100,7 +100,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="MONTO ASIGNADO"
                     android:padding="10dp"
                     android:textColor="@android:color/white"
@@ -111,7 +111,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     android:text="ESTATUS"
                     android:padding="10dp"
                     android:textColor="@android:color/white"

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.programas.mx.programas.ProgramasActivity">
+        tools:context="com.SCT.mx.SCT.DetalleActivity">
 
 
         <LinearLayout
@@ -149,13 +149,13 @@
                             <ImageView
                                 android:id="@+id/imageViewGente"
                                 android:layout_width="80dp"
-                                android:layout_height="85dp"
+                                android:layout_height="55dp"
                                 android:layout_marginLeft="10dp"
                                 android:layout_weight="1"
                                 app:srcCompat="@drawable/ic_nature_people_black_24dp" />
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="300dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
@@ -165,6 +165,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
+
                                     android:layout_weight="1"
                                     android:text="Beneficiarios"
                                     android:textColor="@color/colorPrimary"
@@ -175,10 +176,23 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
+
                                     android:layout_weight="1"
                                     android:text="1,924"
                                     android:textSize="15dp" />
                             </LinearLayout>
+
+                            <ImageButton
+                                android:id="@+id/imageBeneficiarios"
+                                android:layout_width="80dp"
+                                android:layout_height="55dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/colorPrimaryDark"
+                                app:srcCompat="@android:drawable/ic_dialog_dialer" />
                         </LinearLayout>
 
                         <LinearLayout
