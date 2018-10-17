@@ -21,7 +21,7 @@
         <ImageView
             android:layout_width="400dp"
             android:layout_height="100dp"
-            android:src="@drawable/logoSCT"
+            android:src="@drawable/logo_sct"
             android:layout_gravity="bottom|start"/>
 
     </android.support.v7.widget.CardView>
@@ -118,7 +118,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <LinearLayout
@@ -159,7 +159,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -199,7 +199,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -239,7 +239,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -279,7 +279,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -351,7 +351,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -462,7 +462,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
         </LinearLayout>
@@ -497,7 +497,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
@@ -692,7 +692,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -737,7 +737,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
@@ -786,7 +786,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -862,7 +862,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
@@ -961,7 +961,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
@@ -1001,7 +1001,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
@@ -1050,7 +1050,7 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
-                android:background="@android:color/darker_gray" />
+                android:background="@color/lightgray" />
 
 
             <RelativeLayout
@@ -1126,7 +1126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_gravity="center"
-                    android:background="@android:color/darker_gray"
+                    android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
