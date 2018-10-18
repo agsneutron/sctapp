@@ -143,23 +143,18 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         yVals11.add(new Entry(7,76.45F));
         yVals11.add(new Entry(8,76.34F));
         yVals11.add(new Entry(9,87.34F));
-        yVals11.add(new Entry(10,87.23F));
-        yVals11.add(new Entry(11,12.65F));
-        yVals11.add(new Entry(12,23.76F));
-        yVals11.add(new Entry(13,98.23F));
-        yVals11.add(new Entry(14,13.67F));
-        yVals11.add(new Entry(15,87.45F));
+
         LineDataSet set11;
 
         set11 = new LineDataSet(yVals11, "Inversión en Obras a 2018");
         set11.setColors(ColorTemplate.MATERIAL_COLORS);
-        set11.setColor(Color.BLACK);
+        //set11.setColor(Color.BLACK);
         set11.setCircleColor(Color.BLACK);
         set11.setLineWidth(1f);
         set11.setCircleRadius(3f);
         set11.setDrawCircleHole(false);
         set11.setValueTextSize(9f);
-        set11.setDrawFilled(true);
+        //set11.setDrawFilled(true);
 
         ArrayList<LineDataSet> dataSets1 = new ArrayList<LineDataSet>();
         dataSets1.add(set11);
@@ -190,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         // Set the xAxis position to bottom. Default is top
         xAxis.setPosition(XAxis.XAxisPosition.TOP);
         //Customizing x axis value
-        final String[] months = new String[]{"","AGS", "BC", "BCS", "CAM", "COH","COL","CHI","CDMX","DUR","GTO","GRO","HGO","JAL","MICH","PU"};
+        final String[] months = new String[]{"","AGS", "BC", "BCS", "CAM", "COH","COL","CHI","CDMX"}; //,"DUR","GTO","GRO","HGO","JAL","MICH","PU"};
 
         IAxisValueFormatter formatter = new IAxisValueFormatter() {
             @Override
