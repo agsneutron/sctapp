@@ -76,7 +76,7 @@
                     android:layout_height="match_parent"
                     />
 
-                <com.github.mikephil.charting.charts.BarChart
+                <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/bchart1"
                     android:layout_width="318dp"
                     android:layout_height="match_parent"

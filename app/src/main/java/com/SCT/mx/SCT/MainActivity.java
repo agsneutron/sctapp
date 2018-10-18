@@ -34,7 +34,9 @@ import com.SCT.mx.SCT.ui.ResultadosAdapter;
 import com.SCT.mx.SCT.ui.ResultadosAdapterI;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -42,9 +44,12 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
@@ -116,6 +121,124 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
                 startActivity(intent);
             }
         });
+
+        // inicia chart1
+        LineChart bchart1 = (LineChart) findViewById(R.id.bchart1);
+
+
+        ArrayList<Entry> yVals11 = new ArrayList<Entry>();
+
+        //for (int i = (int) 0; i < 10 + 1; i++) {
+        //    float val = (float) (Math.random());
+        //    yVals1.add(new BarEntry(i, val));
+        //}
+
+        yVals11.add(new Entry(0,0F));
+        yVals11.add(new Entry(1,56.5F));
+        yVals11.add(new Entry(2,184.3F));
+        yVals11.add(new Entry(3,14.34F));
+        yVals11.add(new Entry(4,56.23F));
+        yVals11.add(new Entry(5,12.45F));
+        yVals11.add(new Entry(6,21.65F));
+        yVals11.add(new Entry(7,76.45F));
+        yVals11.add(new Entry(8,76.34F));
+        yVals11.add(new Entry(9,87.34F));
+        yVals11.add(new Entry(10,87.23F));
+        yVals11.add(new Entry(11,12.65F));
+        yVals11.add(new Entry(12,23.76F));
+        yVals11.add(new Entry(13,98.23F));
+        yVals11.add(new Entry(14,13.67F));
+        yVals11.add(new Entry(15,87.45F));
+        LineDataSet set11;
+
+        set11 = new LineDataSet(yVals11, "Inversión en Obras a 2018");
+        set11.setColors(ColorTemplate.MATERIAL_COLORS);
+        set11.setColor(Color.BLACK);
+        set11.setCircleColor(Color.BLACK);
+        set11.setLineWidth(1f);
+        set11.setCircleRadius(3f);
+        set11.setDrawCircleHole(false);
+        set11.setValueTextSize(9f);
+        set11.setDrawFilled(true);
+
+        ArrayList<LineDataSet> dataSets1 = new ArrayList<LineDataSet>();
+        dataSets1.add(set11);
+
+        /*ArrayList <String> labels = new ArrayList<String>();
+        labels.add("Aguascalientes");
+        labels.add("Baja California");
+        labels.add("Baja California Sur");
+        labels.add("Campeche");
+        labels.add("Coahuila");
+        labels.add("Colima");
+        labels.add("Chiapas");
+        labels.add("Ciudad de México");
+        labels.add("Durango");
+        labels.add("Guanajuato");
+        labels.add("Guerrero");
+        labels.add("Hidalgo");
+        labels.add("Jalisco");
+        labels.add("Michoacan");
+        labels.add("Puebla");*/
+
+
+
+        //
+        //****
+        // Controlling X axis
+        XAxis xAxis = bchart1.getXAxis();
+        // Set the xAxis position to bottom. Default is top
+        xAxis.setPosition(XAxis.XAxisPosition.TOP);
+        //Customizing x axis value
+        final String[] months = new String[]{"","AGS", "BC", "BCS", "CAM", "COH","COL","CHI","CDMX","DUR","GTO","GRO","HGO","JAL","MICH","PU"};
+
+        IAxisValueFormatter formatter = new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return months[(int) value];
+            }
+        };
+        xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis.setValueFormatter(formatter);
+
+        //***
+        // Controlling right side of y axis
+        YAxis yAxisRight = bchart1.getAxisRight();
+        yAxisRight.setEnabled(true);
+
+        //***
+        // Controlling left side of y axis
+        YAxis yAxisLeft = bchart1.getAxisLeft();
+        yAxisLeft.setGranularity(1f);
+        //
+
+        LineData data1= new LineData(set11);
+
+        data1.setValueTextSize(10f);
+        //data1.setBarWidth(0.9f);
+
+
+        bchart1.setTouchEnabled(true);
+        bchart1.setData(data1);
+        bchart1.setDrawGridBackground(false);
+        bchart1.setScaleEnabled(true);
+        bchart1.setDragEnabled(true);
+        bchart1.animateX(2500);
+
+
+        //bchart1.setDrawValueAboveBar(true);
+
+        Legend l1 = bchart1.getLegend();
+        l1.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l1.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        l1.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l1.setForm(Legend.LegendForm.SQUARE);
+        l1.setDrawInside(true);
+        l1.setXEntrySpace(0f);
+        l1.setYEntrySpace(0f);
+        l1.setYOffset(0f);
+
+
 
         // inicia chart
         BarChart bchart = (BarChart) findViewById(R.id.bchart);
@@ -478,24 +601,42 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
         // Add a marker in Mexico and move the camera.
         LatLng mexico = new LatLng(19.4326009, -99.1333416);
-        mMap.addMarker(new MarkerOptions().position(mexico).title("Ciudad de México, México").snippet(" Beneficiados: 3,959  "+ "\n Inversión: $1,248,369.00"));
+        mMap.addMarker(new MarkerOptions().position(mexico).title("Ciudad de México, México").snippet(" Obras: 959  "+ "\n Inversión: $145,248,369.00"));
 
         LatLng bc = new LatLng(32.6519, -115.4683);
-        mMap.addMarker(new MarkerOptions().position(bc).title("Baja California, México").snippet(" Beneficiados: 958  "+ "\n Inversión: $286,274.00"));
+        mMap.addMarker(new MarkerOptions().position(bc).title("Baja California, México").snippet(" Obras: 355  "+ "\n Inversión: $286,274,435.00"));
 
         LatLng bcs = new LatLng(23.25000, -109.75000);
-        mMap.addMarker(new MarkerOptions().position(bcs).title("Baja California Sur, México").snippet(" Beneficiados: 1,054  "+ "\n Inversión: $639,174.00"));
+        mMap.addMarker(new MarkerOptions().position(bcs).title("Baja California Sur, México").snippet(" Obras: 54  "+ "\n Inversión: $34,639,174.00"));
 
         LatLng ag = new LatLng(21.8823400, -102.2825900);
-        mMap.addMarker(new MarkerOptions().position(ag).title("Aguascalientes, México").snippet(" Beneficiados: 2,584  "+ "\n Inversión: $1,584,274.00"));
+        mMap.addMarker(new MarkerOptions().position(ag).title("Aguascalientes, México").snippet(" Obras: 584  "+ "\n Inversión: $321,584,274.00"));
 
         LatLng ch = new LatLng(16.75, -93.1167);
-        mMap.addMarker(new MarkerOptions().position(ch).title("Chiapas, México").snippet(" Beneficiados: 5,843  "+ "\n Inversión: $3,747,739.00"));
+        mMap.addMarker(new MarkerOptions().position(ch).title("Chiapas, México").snippet(" Obras: 843  "+ "\n Inversión: $74,747,739.00"));
 
         LatLng gr = new LatLng(18.775, -103.8375);
-        mMap.addMarker(new MarkerOptions().position(gr).title("Colima, México").snippet(" Beneficiados: 2,585  "+ "\n Inversión: $1,004,942.00"));
+        mMap.addMarker(new MarkerOptions().position(gr).title("Colima, México").snippet(" Obras: 585  "+ "\n Inversión: $23,004,942.00"));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(mexico));
+        LatLng cam = new LatLng(19.8454,-90.5237);
+        mMap.addMarker(new MarkerOptions().position(cam).title("Campeche, México").snippet(" Obras: 463  "+ "\n Inversión: $75,754,725.00"));
+
+        LatLng ver = new LatLng(19.1809500,-96.1429000);
+        mMap.addMarker(new MarkerOptions().position(ver).title("Veracruz, México").snippet(" Obras: 245  "+ "\n Inversión: $1,245,642.00"));
+
+
+        LatLng chi = new LatLng(28.6352800,-106.0888900);
+        mMap.addMarker(new MarkerOptions().position(chi).title("Chihuahua, México").snippet(" Obras: 742  "+ "\n Inversión: $75,5768,235.00"));
+
+        LatLng sin = new LatLng( 27.35,-102.0167);
+        mMap.addMarker(new MarkerOptions().position(sin).title("Sinaloa, México").snippet(" Obras: 325  "+ "\n Inversión: $24,634,460.00"));
+
+        LatLng ger = new LatLng( 16.775,-93.7417);
+        mMap.addMarker(new MarkerOptions().position(sin).title("Guerrero, México").snippet(" Obras: 753 "+ "\n Inversión: $10,743,074.00"));
+
+
+        LatLng center = new LatLng( 22.6526121, -100.1780452);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(center));
         mMap.animateCamera( CameraUpdateFactory.zoomTo( 4.0f ) );
 
 
