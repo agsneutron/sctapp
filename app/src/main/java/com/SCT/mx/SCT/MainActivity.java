@@ -219,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         bchart1.setScaleEnabled(true);
         bchart1.setDragEnabled(true);
         bchart1.animateX(2500);
+        //bchart1.setVisibleXRangeMaximum(10);
 
 
         //bchart1.setDrawValueAboveBar(true);
@@ -246,11 +247,15 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         //    yVals1.add(new BarEntry(i, val));
         //}
 
-        yVals1.add(new BarEntry(1,15,"Aguascalientes"));
-        yVals1.add(new BarEntry(2,34,"Baja California"));
-        yVals1.add(new BarEntry(3,18,"Baja California Sur"));
-        yVals1.add(new BarEntry(4,22,"Campeche"));
-        yVals1.add(new BarEntry(5,10,"Coahuila"));
+
+
+
+
+        yVals1.add(new BarEntry(1,1394,"En proyecto Federal"));
+        yVals1.add(new BarEntry(2,3235,"En proceso civil"));
+        yVals1.add(new BarEntry(3,10302,"Asignadas"));
+
+        /*yVals1.add(new BarEntry(5,10,"Coahuila"));
         yVals1.add(new BarEntry(6,0,"Colima"));
         yVals1.add(new BarEntry(7,56,"Chiapas"));
         yVals1.add(new BarEntry(8,5,"Ciudad de México"));
@@ -260,10 +265,10 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         yVals1.add(new BarEntry(12,17,"Hidalgo"));
         yVals1.add(new BarEntry(13,25,"Jalisco"));
         yVals1.add(new BarEntry(14,24,"Ciudad de México"));
-        yVals1.add(new BarEntry(15,29,"Michoacán"));
+        yVals1.add(new BarEntry(15,29,"Michoacán"));*/
         BarDataSet set1;
 
-        set1 = new BarDataSet(yVals1, "Programas a 2018");
+        set1 = new BarDataSet(yVals1, "Licitaciones del 2018");
         set1.setColors(ColorTemplate.MATERIAL_COLORS);
 
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
@@ -278,6 +283,8 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         bchart.setTouchEnabled(true);
         bchart.setData(data);
         bchart.setDrawGridBackground(false);
+        bchart.getDescription().setEnabled(true);
+
 
 
         bchart.setDrawValueAboveBar(true);
@@ -293,6 +300,64 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         l.setYOffset(0f);
 
         //inicia top programas vs beneficiarios
+
+
+        //chart contratos
+        //chart
+        PieChart bchart4 = (PieChart) findViewById(R.id.bchart4);
+
+        List<PieEntry> entries4 = new ArrayList<>();
+
+
+
+        entries4.add(new PieEntry(456f, "Menor a 5 M"));
+        entries4.add(new PieEntry(765f, "Mayor a 5 M"));
+
+
+        /*entries3.add(new PieEntry(1.33f,"Apoyo al Estudiante"));
+        entries3.add(new PieEntry(1.00f,"Atención salud Visual"));
+        entries3.add(new PieEntry(0.97f,"Premio Estatal a la Juventud"));
+        entries3.add(new PieEntry(0.75f,"Mejoramiento de Vivienda"));
+        entries3.add(new PieEntry(0.68f,"Programa de Apoyo a Pequeños Productores"));
+        entries3.add(new PieEntry(0.57f,"Apoyo a la Población Indígena"));
+        entries3.add(new PieEntry(0.50f,"Apoyo a Mujeres Jefas de Familia"));
+        entries3.add(new PieEntry(0.45f,"Formación del Sector Artesanal"));
+        entries3.add(new PieEntry(0.43f,"Proyectos Productivos"));*/
+
+        PieDataSet set4 = new PieDataSet(entries4, "Número de Contratos");
+        PieData data4 = new PieData(set4);
+        bchart4.setData(data4);
+        bchart4.invalidate(); // refresh
+
+        set4.setColors(ColorTemplate.MATERIAL_COLORS);
+
+        data4.setValueTextSize(15f);
+        data4.setValueTextColor(Color.DKGRAY);
+
+        // data.setBarWidth(0.9f);
+
+        bchart4.setTouchEnabled(true);
+        bchart4.setData(data4);
+        bchart4.setDrawEntryLabels(false);
+        bchart4.setEntryLabelColor(Color.BLACK);
+        bchart4.setDrawEntryLabels(true);
+        bchart4.setEntryLabelTextSize(8f);
+        bchart4.getLegend().setEnabled(false);
+        bchart4.getDescription().setText("Número de contratos" );
+
+
+        Legend l3 = bchart4.getLegend();
+        l3.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+        l3.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        l3.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l3.setDrawInside(false);
+        l3.setXEntrySpace(2f);
+        l3.setYEntrySpace(2f);
+        l3.setYOffset(0f);
+        l3.setWordWrapEnabled(true);
+        l3.setTextSize(5f);
+
+        //
 
         //CHART
 
@@ -325,6 +390,9 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         xl.setDrawGridLines(false);
         xl.setGranularity(10f);
 
+        xAxis.setLabelCount(4);
+
+
         YAxis yl = mChart2.getAxisLeft();
         //yl.setTypeface(mTfLight);
         yl.setDrawAxisLine(true);
@@ -336,6 +404,24 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         //yr.setTypeface(mTfLight);
         yr.setDrawAxisLine(true);
         yr.setDrawGridLines(false);
+
+
+        //+++++
+
+
+      /*final String[] dfg = new String[]{"Radio Federal","Televisión Civil", "Telefonía", "Internet"};
+
+        IAxisValueFormatter frm = new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return dfg[(int) value];
+            }
+        };
+
+        xAxis.setValueFormatter(frm);
+*/
+
+
         yr.setAxisMinimum(0f); // this replaces setStartAtZero(true)
 //        yr.setInverted(true);
 
@@ -349,26 +435,14 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         //    yVals2.add(new BarEntry(i, val));
         //}
 
-
-        yVals2.add(new BarEntry(1,55436,"Aguascalientes"));
-        yVals2.add(new BarEntry(2,46290,"Baja California"));
-        yVals2.add(new BarEntry(3,40285,"Baja California Sur"));
-        yVals2.add(new BarEntry(4,38890,"Campeche"));
-        yVals2.add(new BarEntry(5,33296,"Coahuila"));
-        yVals2.add(new BarEntry(6,29089,"Colima"));
-        yVals2.add(new BarEntry(7,26489,"Chiapas"));
-        yVals2.add(new BarEntry(8,25728,"Ciudad de México"));
-        yVals2.add(new BarEntry(9,22862,"Durango"));
-        yVals2.add(new BarEntry(10,20876,"Guanajuato"));
-        yVals2.add(new BarEntry(11,19873,"Guerrero"));
-        yVals2.add(new BarEntry(12,18250,"Hidalgo"));
-        yVals2.add(new BarEntry(13,18998,"Jalisco"));
-        yVals2.add(new BarEntry(14,16480,"Ciudad de México"));
-        yVals2.add(new BarEntry(15,15027,"Michoacán"));
+        yVals2.add(new BarEntry(4,7.28F,"Radio Federal"));
+        yVals2.add(new BarEntry(3,13.50F,"Televisión Civil"));
+        yVals2.add(new BarEntry(1,23.70F,"Telefonía"));
+        yVals2.add(new BarEntry(2,18.50F,"Internet"));
 
         BarDataSet set2;
 
-        set2 = new BarDataSet(yVals2, "Beneficiarios por Programa");
+        set2 = new BarDataSet(yVals2, "Inversión Total en Comunicaciones");
 
         set2.setDrawIcons(true);
 
@@ -398,28 +472,16 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         //RV
 
         ArrayList<ProgramasBeneficiarios> arregloPB = new ArrayList<>();
-        arregloPB.add(new ProgramasBeneficiarios("Apoyo a la Población Vulnerable", "55,436"));
-        arregloPB.add(new ProgramasBeneficiarios("Nutrición con Valor", "46,290"));
-        arregloPB.add(new ProgramasBeneficiarios("Tu Empleo Formal", "40,285"));
-        arregloPB.add(new ProgramasBeneficiarios("Asistencia Social a la Comunidad", "38,890"));
-        arregloPB.add(new ProgramasBeneficiarios("Apoyo al Estudiante", "33,296"));
-        arregloPB.add(new ProgramasBeneficiarios("Apoyo a Mujeres Jefas de Familia", "29,089"));
-        arregloPB.add(new ProgramasBeneficiarios("Formación del Sector Artesanal", "26,489"));
-        arregloPB.add(new ProgramasBeneficiarios("Proyectos Productivos", "25,728"));
-        arregloPB.add(new ProgramasBeneficiarios("Apoyo a Asociaciones Culturales", "22,862"));
-        arregloPB.add(new ProgramasBeneficiarios("Beca Deportiva", "20,876"));
-        arregloPB.add(new ProgramasBeneficiarios("Atención salud Visual", "19,873"));
-        arregloPB.add(new ProgramasBeneficiarios("Premio Estatal a la Juventud", "18,250"));
-        arregloPB.add(new ProgramasBeneficiarios("Mejoramiento de Vivienda", "18.998"));
-        arregloPB.add(new ProgramasBeneficiarios("Programa de Apoyo a Pequeños Productores", "16,480"));
-        arregloPB.add(new ProgramasBeneficiarios("Apoyo a la Población Indígena", "15,027"));
-
+        arregloPB.add(new ProgramasBeneficiarios("Autotransporte Federal","$ 50.346,578.00"));
+        arregloPB.add(new ProgramasBeneficiarios("Aeronáutica Civil", "$ 81,300,643.00"));
+        arregloPB.add(new ProgramasBeneficiarios("Desarrollo Ferroviario", "$ 90,800,000.00"));
+        arregloPB.add(new ProgramasBeneficiarios("Transporte Marítimo","31,330,635.00"));
 
         datasetPB = new ArrayList<ProgramasBeneficiarios>();
         datasetPB = arregloPB;
         recyclerView = (RecyclerView) findViewById(R.id.rv_beneficiarios);
         recyclerView.setHasFixedSize(true);
-        adapter = new ResultadosAdapter(datasetPB, R.layout.item_list_content, MainActivity.this);//(cobroarraylist, R.layout.cobrador_item_lista);
+        adapter = new ResultadosAdapter(datasetPB, R.layout.item_list_contentt, MainActivity.this);//(cobroarraylist, R.layout.cobrador_item_lista);
         //recyclerView.setAdapter(new CobroAdapter(cobroarraylist, R.layout.cobrador_item_lista));  //cobroarraylist
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
@@ -427,17 +489,20 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
         //inicia top programas vs inversión
 
-        //chart
+
+
+        //chart  TRANSPORTE
         PieChart bchart3 = (PieChart) findViewById(R.id.bchart2);
 
         List<PieEntry> entries3 = new ArrayList<>();
 
-        entries3.add(new PieEntry(7.28f, "Apoyo a Asociaciones..."));
-        entries3.add(new PieEntry(4.57f, "Beca Deportiva"));
-        entries3.add(new PieEntry(3.87f, "Apoyo a la Población..."));
-        entries3.add(new PieEntry(2.45f, "Nutrición con Valor"));
-        entries3.add(new PieEntry(1.53f,"Tu Empleo Formal"));
-        entries3.add(new PieEntry(1.45f,"Asistencia Social..."));
+
+
+        entries3.add(new PieEntry(50.34f, "Autotransporte Federal"));
+        entries3.add(new PieEntry(81.30f, "Aeronáutica Civil"));
+        entries3.add(new PieEntry(90.8f, "Desarrollo Ferroviario"));
+        entries3.add(new PieEntry(31.33f, "Transporte Marítimo"));
+
         /*entries3.add(new PieEntry(1.33f,"Apoyo al Estudiante"));
         entries3.add(new PieEntry(1.00f,"Atención salud Visual"));
         entries3.add(new PieEntry(0.97f,"Premio Estatal a la Juventud"));
@@ -448,7 +513,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         entries3.add(new PieEntry(0.45f,"Formación del Sector Artesanal"));
         entries3.add(new PieEntry(0.43f,"Proyectos Productivos"));*/
 
-        PieDataSet set3 = new PieDataSet(entries3, "Millones de Inversión por Programa");
+        PieDataSet set3 = new PieDataSet(entries3, "Millones de Inversión en Transporte");
         PieData data3 = new PieData(set3);
         bchart3.setData(data3);
         bchart3.invalidate(); // refresh
@@ -467,7 +532,8 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         bchart3.setDrawEntryLabels(true);
         bchart3.setEntryLabelTextSize(8f);
         bchart3.getLegend().setEnabled(false);
-        bchart3.getDescription().setText("Millones de pesos invertidos por programa" );
+        bchart3.getDescription().setText("Millones de pesos invertidos en transporte" );
+
 
         /*Legend l3 = bchart3.getLegend();
         l3.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
@@ -488,11 +554,17 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         //RV
 
         ArrayList<ProgramasInversion> arregloPI = new ArrayList<>();
-        arregloPI.add(new ProgramasInversion("Apoyo a Asociaciones Culturales", "$ 7,286,278.00"));
-        arregloPI.add(new ProgramasInversion("Beca Deportiva", "$ 4,576,588.00"));
-        arregloPI.add(new ProgramasInversion("Apoyo a la Población Vulnerable", "$ 3,876,538.00"));
-        arregloPI.add(new ProgramasInversion("Nutrición con Valor", "$ 2,456,256.00"));
-        arregloPI.add(new ProgramasInversion("Tu Empleo Formal", "$ 1,535,843.00"));
+
+
+
+
+        arregloPI.add(new ProgramasInversion("Radio Federal", "$ 7,286,278.00"));
+
+        arregloPI.add(new ProgramasInversion("Televisión Civil", "$ 13,576,588.00"));
+
+        arregloPI.add(new ProgramasInversion("Internet", "$ 18,506,256.00"));
+        arregloPI.add(new ProgramasInversion("Telefonía", "$ 23,776,538.00"));
+        /*arregloPI.add(new ProgramasInversion("Tu Empleo Formal", "$ 1,535,843.00"));
         arregloPI.add(new ProgramasInversion("Asistencia Social a la Comunidad", "$ 1,457,239.00"));
         arregloPI.add(new ProgramasInversion("Apoyo al Estudiante", "$ 1,334,164.00"));
         arregloPI.add(new ProgramasInversion("Atención salud Visual", "$ 1,006,235.00"));
@@ -503,7 +575,7 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         arregloPI.add(new ProgramasInversion("Apoyo a Mujeres Jefas de Familia", "$ 509,998.00"));
         arregloPI.add(new ProgramasInversion("Formación del Sector Artesanal", "$ 459,976.00"));
         arregloPI.add(new ProgramasInversion("Proyectos Productivos", "$ 431,930.00"));
-
+*/
 
         datasetPI = new ArrayList<ProgramasInversion>();
         datasetPI = arregloPI;
@@ -649,9 +721,9 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
                 if(marker.getTitle().toString().equals("Ciudad de México, México")){
 
-                    Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-                    intent.putExtra("estado","cdmx");
-                    startActivity(intent);
+                    //Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                    //intent.putExtra("estado","cdmx");
+                    //startActivity(intent);
                 }
                 if(marker.equals(marker_mx)){
                     Log.w("Click", "MX");

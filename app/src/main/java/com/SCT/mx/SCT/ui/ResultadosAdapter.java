@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.SCT.mx.SCT.FichaTecnica;
 import com.SCT.mx.SCT.domain.ProgramasBeneficiarios;
 import com.SCT.mx.SCT.MainActivity;
 import com.programas.mx.programas.R;
@@ -115,18 +116,18 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
                     //int pos = getAdapterPosition();
                     //String cp = resultados.get(pos).getClave_catastral();
                     //Log.e("ID",String.valueOf(view.getId()));
-                    Intent intentc = new Intent(context, MainActivity.class);
-                    intentc.putExtra("clave", lprograma.getText().toString());
-                    context.startActivity(intentc);
+                    //Intent intentc = new Intent(context, FichaTecnica.class);
+                    //intentc.putExtra("clave", lprograma.getText().toString());
+                    //context.startActivity(intentc);
                     break;
                 case R.id.content:
-                    Intent intentv = new Intent(context, MainActivity.class);
-                    intentv.putExtra("clave", lprograma.getText().toString());
-                    intentv.putExtra("cp",lbeneficiarios.getText().toString());
-                    context.startActivity(intentv);
+                    //Intent intentv = new Intent(context, MainActivity.class);
+                    //intentv.putExtra("clave", lprograma.getText().toString());
+                    //intentv.putExtra("cp",lbeneficiarios.getText().toString());
+                    //context.startActivity(intentv);
                     break;
             }
-            ((Activity)context).finish();
+            //((Activity)context).finish();
         }
     }
 }

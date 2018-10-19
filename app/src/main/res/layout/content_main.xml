@@ -11,382 +11,423 @@
     tools:showIn="@layout/activity_main">
 
 
-    <RelativeLayout
-        android:id="@+id/topProgramasP"
-        android:layout_width="637dp"
-        android:layout_height="330dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/topProgramasB"
-        app:layout_constraintTop_toBottomOf="@+id/frame_chart">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/titulares"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/topProgramasB"
+        app:layout_constraintEnd_toStartOf="@+id/frame_chart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cvsub3"
+        <android.support.v7.widget.CardView
+            android:id="@+id/firsttitle"
+            android:layout_width="637dp"
+            android:layout_height="50dp"
+            app:cardBackgroundColor="@color/lightgray"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/mapacu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:foregroundGravity="center"
+            >
+
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:foregroundGravity="center_horizontal|center"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:gravity="center_vertical|start"
+                android:text="@string/infraestructura"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:layout_margin="0dp"
+                android:textStyle="bold"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="2sp"
+                android:background="@color/colorPrimaryDark" />
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical|center"
-                    android:text="ANTICORRUPCIÓN"
-                    android:textAlignment="center"
-                    android:textColor="@color/bg"
-                    android:textSize="18sp" />
+        </android.support.v7.widget.CardView>
 
-            </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/mapacu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="0dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/firsttitle">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cvI"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:padding="15dp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cvsub3">
+                android:padding="10dp"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/bchart2"
-                        android:layout_width="317dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:padding="8dp" />
+                <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/map"
+                    class="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="318dp"
+                    android:layout_height="match_parent" />
 
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/bchart1"
                     android:layout_width="318dp"
                     android:layout_height="match_parent"
-                     />
+                    android:padding="10dp"/>
             </LinearLayout>
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:clickable="true"
-                    android:tint="@color/cardview_light_background"
-                    app:backgroundTint="@color/colorPrimary"
-                    app:srcCompat="@android:drawable/ic_menu_add" />
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/topProgramasB"
-        android:layout_width="637dp"
-        android:layout_height="330dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/topProgramasP"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titulares">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cvsub2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="0dp"
-
-                android:foregroundGravity="center_horizontal|center"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:tint="@color/cardview_light_background"
+                app:backgroundTint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_add_black_24dp" />
+        </android.support.v7.widget.CardView>
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical|center"
-                    android:text="COMUNICACIONES"
-                    android:textAlignment="center"
-                    android:textColor="@color/bg"
-                    android:textSize="18sp" />
+    </android.support.constraint.ConstraintLayout>
 
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/cvB"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:padding="15dp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cvsub2">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <com.github.mikephil.charting.charts.HorizontalBarChart
-                        android:id="@+id/bchart3"
-                        android:layout_width="317dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:padding="8dp" />
-
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/rv_beneficiarios"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="end|bottom"
-                        android:layout_margin="8dp"
-                        android:padding="8dp"
-                        tools:listitem="@layout/item_list_content">
-
-                    </android.support.v7.widget.RecyclerView>
-
-                </LinearLayout>
-
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab_t"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|start"
-                    android:clickable="true"
-                    android:tint="@color/cardview_light_background"
-                    app:backgroundTint="@color/colorPrimary"
-                    app:srcCompat="@android:drawable/ic_menu_add" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/frame_chart"
-        android:layout_width="637dp"
-        android:layout_height="330dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/topProgramasP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/titulares"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context="com.SCT.mx.SCT.MainActivity">
+        tools:context="com.SCT.mx.SCT.MainActivity"
+        android:layout_marginRight="8dp">
 
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
+            android:id="@+id/tit1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="50dp"
+            android:foregroundGravity="center_horizontal|center"
+            app:cardBackgroundColor="@color/lightgray"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cvC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/tit1"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="0dp"
-                android:foregroundGravity="center_horizontal|center"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical|center"
-                    android:text="TRANSPORTE"
-                    android:textAlignment="center"
-                    android:textColor="@color/bg"
-                    android:textSize="18sp" />
+                android:gravity="center_vertical|end"
+                android:text="TRANSPORTE"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginRight="20dp"/>
 
 
-            </android.support.v7.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="2sp"
+                android:background="@color/colorPrimaryDark" />
+        </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cvC"
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvC"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tit1">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:padding="15dp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tit1">
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/bchart2"
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="364dp"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/bchart"
-                        android:layout_width="318dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:padding="5dp" />
+                    android:orientation="vertical"
+                    android:layout_gravity="left">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Inversión Total en Transporte MXN"
+                        android:textSize="18sp"
+                        android:textStyle="italic"/>
 
                     <android.support.v7.widget.RecyclerView
-                        android:id="@+id/rv_presupuesto"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/rv_beneficiarios"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="end|bottom"
-                        android:layout_margin="8dp"
-                        android:padding="8dp"
-                        tools:listitem="@layout/item_list_contenti">
+                        tools:listitem="@layout/item_list_contentt">
 
                     </android.support.v7.widget.RecyclerView>
                 </LinearLayout>
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab_s"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:clickable="true"
-                    android:tint="@color/cardview_light_background"
-                    app:backgroundTint="@color/colorPrimary"
-                    app:srcCompat="@android:drawable/ic_menu_add" />
 
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
+            </LinearLayout>
 
-    </RelativeLayout>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_s"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="0dp"
+                android:clickable="true"
+                android:tint="@color/cardview_light_background"
+                app:backgroundTint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_add_black_24dp" />
 
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
 
-    <RelativeLayout
-        android:id="@+id/titulares"
-        android:layout_width="637dp"
-        android:layout_height="330dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/topProgramasB"
-        app:layout_constraintEnd_toStartOf="@+id/frame_chart"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/topProgramasB"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/topProgramasP"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/titulares"
+        android:layout_marginLeft="8dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvsub2"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:foregroundGravity="center_horizontal|center"
+            app:cardBackgroundColor="@color/lightgray"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cvB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/firsttitle"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:foregroundGravity="center_horizontal|center"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-                app:cardElevation="0dp"
-                app:layout_constraintBottom_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:gravity="start|center_vertical"
+                android:text="COMUNICACIONES"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/dfgdfgdfg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="center_vertical|center|start"
-                    android:text="INFRAESTRUCTURA - Inversión en Obras"
-                    android:textAlignment="center"
-                    android:textColor="@color/bg"
-                    android:textSize="18sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="2sp"
+                android:background="@color/colorPrimaryDark" />
+        </android.support.v7.widget.CardView>
 
 
-            </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvB"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvsub2">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/mapacu"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:padding="15dp"
-                app:cardElevation="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/firsttitle">
+                android:orientation="horizontal">
 
-                <LinearLayout
+
+            <LinearLayout
+                android:layout_width="317dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="left">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Inversión Total en Comunicaciones"
+                    android:textSize="18sp"
+                    android:textStyle="italic"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_presupuesto"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_gravity="end|bottom"
+                    tools:listitem="@layout/item_list_content">
 
-                    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:id="@+id/map"
-                        class="com.google.android.gms.maps.SupportMapFragment"
-                        android:layout_width="318dp"
-                        android:layout_height="310dp"
-                        android:layout_margin="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="5dp" />
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
 
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/bchart1"
-                        android:layout_width="318dp"
-                        android:layout_height="310dp" />
-                </LinearLayout>
-
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab_p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|start"
-                    android:clickable="true"
-                    android:tint="@color/cardview_light_background"
-                    app:backgroundTint="@color/colorPrimary"
-                    app:srcCompat="@drawable/ic_add_black_24dp" />
-            </android.support.v7.widget.CardView>
-
-        </LinearLayout>
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/bchart3"
+                    android:layout_width="317dp"
+                    android:layout_height="match_parent" />
 
 
-    </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:tint="@color/cardview_light_background"
+                app:backgroundTint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_add_black_24dp" />
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/topProgramasP"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/topProgramasB"
+        app:layout_constraintTop_toBottomOf="@+id/frame_chart">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvsub3"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:foregroundGravity="center_horizontal|center"
+            app:cardBackgroundColor="@color/lightgray"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cvI"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical|end"
+                android:text="ANTICORRUPCIÓN"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="2sp"
+                android:background="@color/colorPrimaryDark" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cvI"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimaryDark"
+            app:cardElevation="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvsub3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="317dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="left">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Licitaciones"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    android:gravity="center"/>
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bchart"
+                    android:layout_width="317dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="317dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="left">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Contratos"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    android:gravity="center"/>
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/bchart4"
+                    android:layout_width="317dp"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"
+                android:clickable="true"
+                android:tint="@color/cardview_light_background"
+                app:backgroundTint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_add_black_24dp" />
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
