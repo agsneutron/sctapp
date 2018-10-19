@@ -1,10 +1,5 @@
 package com.SCT.mx.SCT.ui;
 
-/**
- * Created by ariaocho on 30/09/18.
- */
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -16,23 +11,25 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.SCT.mx.SCT.FichaTecnica;
+import com.SCT.mx.SCT.domain.ProgramaOb;
 import com.SCT.mx.SCT.domain.ProgramasBeneficiarios;
-import com.SCT.mx.SCT.MainActivity;
 import com.programas.mx.programas.R;
-
 
 import java.util.ArrayList;
 
+/**
+ * Created by ariaocho on 18/10/18.
+ */
 
-public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.ViewHolder> {
+public class ResultadosAdapterx extends RecyclerView.Adapter<ResultadosAdapterx.ViewHolder> {
 
-    private ArrayList<ProgramasBeneficiarios> resultados;
+    private ArrayList<ProgramaOb> resultados;
     private int itemLayout;
     Context context;
 
     private static String LOG_TAG = "CardViewActivity";
 
-    public ResultadosAdapter(ArrayList<ProgramasBeneficiarios> resultados, int itemLayout, Context context) {
+    public ResultadosAdapterx(ArrayList<ProgramaOb> resultados, int itemLayout, Context context) {
         this.context = context;
         this.resultados = resultados;
         this.itemLayout = itemLayout;
@@ -42,19 +39,23 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ResultadosAdapterx.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(itemLayout, viewGroup, false);
-        return new ViewHolder(v);   //es el viewHolder creado abajo
+        return new ResultadosAdapterx.ViewHolder(v);   //es el viewHolder creado abajo
 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(ResultadosAdapterx.ViewHolder viewHolder, int i) {
 
-        ProgramasBeneficiarios resultado = resultados.get(i);
+        ProgramaOb resultado = resultados.get(i);
 
-        viewHolder.lprograma.setText(resultado.getPrograma());
-        viewHolder.lbeneficiarios.setText(resultado.getBeneficiarios());
+        viewHolder.lprograma.setText(resultado.getNombre());
+        viewHolder.lbeneficiarios.setText(resultado.getMeta_total());
+        viewHolder.l3.setText(resultado.getAvance_total());
+        viewHolder.l4.setText(resultado.getAvance_unidades());
+        viewHolder.l5.setText(resultado.getAvance_porcentaje());
+        viewHolder.l6.setText(resultado.getAvance_importe());
 
         // set listeners a los botones
         viewHolder.setOnClickListeners();
@@ -68,7 +69,7 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
         return resultados.size();
     }
 
-    public void addAll(@NonNull ArrayList<ProgramasBeneficiarios> resultados) {
+    public void addAll(@NonNull ArrayList<ProgramaOb> resultados) {
         if (resultados == null)
             throw new NullPointerException("La lista no puede ser vacia");
         this.resultados = resultados;
@@ -81,7 +82,8 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView lprograma;
-        public TextView lbeneficiarios;
+        public TextView lbeneficiarios,l2,l3,l5,l4,l6;
+
 
 
         public ViewHolder(View itemView) {
@@ -89,7 +91,11 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
             context = itemView.getContext();
 
             lprograma = (TextView) itemView.findViewById(R.id.id_text);
-            lbeneficiarios = (TextView) itemView.findViewById(R.id.content);
+            lbeneficiarios = (TextView) itemView.findViewById(R.id.t2);
+            l3 = (TextView) itemView.findViewById(R.id.t3);
+            l4 = (TextView) itemView.findViewById(R.id.t4);
+            l5 = (TextView) itemView.findViewById(R.id.t5);
+            l6 =(TextView) itemView.findViewById(R.id.t6);
 
 
            /* itemView.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +109,7 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
             });*/
         }
 
-        void setOnClickListeners(){
+        void setOnClickListeners() {
             lprograma.setOnClickListener(this);
             lbeneficiarios.setOnClickListener(this);
         }
@@ -111,14 +117,16 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()){
+            switch (view.getId()) {
                 case R.id.id_text:
-                    //int pos = getAdapterPosition();
-                    //String cp = resultados.get(pos).getClave_catastral();
-                    //Log.e("ID",String.valueOf(view.getId()));
-                    //Intent intentc = new Intent(context, FichaTecnica.class);
-                    //intentc.putExtra("clave", lprograma.getText().toString());
-                    //context.startActivity(intentc);
+                    if (lprograma.getText().toString().equals("Carretera-E.C- CHAMP. – CAMP.")){
+                        //int pos = getAdapterPosition();
+                        //String cp = resultados.get(pos).getClave_catastral();
+                        Log.e("ID", String.valueOf(view.getId()));
+                    Intent intentc = new Intent(context, FichaTecnica.class);
+                    intentc.putExtra("clave", lprograma.getText().toString());
+                    context.startActivity(intentc);
+                    }
                     break;
                 case R.id.content:
                     //Intent intentv = new Intent(context, MainActivity.class);
@@ -130,4 +138,5 @@ public class ResultadosAdapter extends RecyclerView.Adapter<ResultadosAdapter.Vi
             //((Activity)context).finish();
         }
     }
+
 }

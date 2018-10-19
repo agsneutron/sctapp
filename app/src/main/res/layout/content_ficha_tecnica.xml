@@ -148,7 +148,7 @@
                     android:breakStrategy="high_quality"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="AMPLIACION DE RED DE DISTRIBUCION DEL SISTEMA DE AGUA POTABLE"
+                    android:text="ULUMAL-VILLA DE GUADALUPE-SAN MIGUEL, DEL KM 2+440 AL KM 23+200 (TRAMOS AISLADOS)"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp" />
