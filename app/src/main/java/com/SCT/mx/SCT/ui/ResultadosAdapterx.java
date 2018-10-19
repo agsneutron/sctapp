@@ -119,7 +119,7 @@ public class ResultadosAdapterx extends RecyclerView.Adapter<ResultadosAdapterx.
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.id_text:
-                    if (lprograma.getText().toString().equals("Carretera-E.C- CHAMP. – CAMP.")){
+                    if (lprograma.getText().toString().equals("Carretera-ULUMAL-VILLA DE GUADALUPE")){
                         //int pos = getAdapterPosition();
                         //String cp = resultados.get(pos).getClave_catastral();
                         Log.e("ID", String.valueOf(view.getId()));
