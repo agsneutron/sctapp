@@ -84,25 +84,23 @@ public class Infraestructura extends AppCompatActivity implements OnMapReadyCall
 
         //Nombre, Meta_total, avance_total, avance_unidades, avance_porcentaje, avance_importe
         ArrayList<ProgramaOb> arregloOB = new ArrayList<>();
-        arregloOB.add(new ProgramaOb("Nombre", "Meta ", "Av. Total", "Av. Unidades", "Av. Porcentaje", "Inversión"));
-        arregloOB.add(new ProgramaOb("Carretera-ULUMAL-VILLA DE GUADALUPE","80","76","3100 km","95%","$ 56 MDP"));
-        arregloOB.add(new ProgramaOb("Autopistas-1ra SEC TRAMO FEDERAL", "52","38","2400 km","73%","$ 146 MDP"));
-        arregloOB.add(new ProgramaOb("Accesos a ZMVM--CONSERVACION DEL CAMINO PEDREGAL ", "10","6","67 km","60%","$ 14 MDP"));
-        arregloOB.add(new ProgramaOb("Distribuidores-Dist víal Oriente", "50","50","700 km","100%","$ 12 MDP"));
-        arregloOB.add(new ProgramaOb("Caminos rurales-PROLONGACION DE LA ESCOLLERA","36","32","400 km","90%","$ 87 MDP"));
-        arregloOB.add(new ProgramaOb("Libramientos-ATENCION AL PUNTO DE CONFLICTO LA PILA", "56","36","944 km","64%","$ 64 MDP"));
-        arregloOB.add(new ProgramaOb("Marítimo- MANTENIMIENTO PUERTO MADERO", "53","52","000 TONS","0%","$ 70 MDP"));
-        arregloOB.add(new ProgramaOb("Ferroviario-COYUCA I", "8","6","632 km","60","$ 38.5 MDP"));
-        arregloOB.add(new ProgramaOb("Carretera-E.C- CHAMP. – CAMP.","80","76","3100 km","95%","$ 56 MDP"));
-        arregloOB.add(new ProgramaOb("Autopistas-TRAMO FEDERAL-VILLA DE GUADALUPE", "52","38","2400 km","73%","$ 146 MDP"));
-        arregloOB.add(new ProgramaOb("Accesos a ZMVM--CONSERVACION DEL CAMINO PEDREGAL ", "10","6","67 km","60%","$ 14 MDP"));
-        arregloOB.add(new ProgramaOb("Distribuidores-Dist víal Oriente", "50","50","700 km","100%","$ 12 MDP"));
-        arregloOB.add(new ProgramaOb("Caminos rurales-PROLONGACION DE LA ESCOLLERA","36","32","400 km","32%","$ 90 MDP"));
-        arregloOB.add(new ProgramaOb("Libramientos-ATENCION AL PUNTO DE CONFLICTO LA PILA", "56","36","944 km","64%","$ 64 MDP"));
-        arregloOB.add(new ProgramaOb("Marítimo- MANTENIMIENTO PUERTO MADERO", "53","52","000 Tons","0 %","$ 80 MDP"));
-        arregloOB.add(new ProgramaOb("Ferroviario-COYUCA I", "8","6","632 km","60%","$ 38.5 MDP"));
-
-
+        arregloOB.add(new ProgramaOb("Denominación", "Estado ", "Municipio", "Tipo Obra", "Avance", "Inversión"));
+        arregloOB.add(new ProgramaOb("Carretera-ULUMAL-VILLA DE GUADALUPE","Michoacán","Lázaro Cárdens","Proceso","95%","$ 56 MDP"));
+        arregloOB.add(new ProgramaOb("Autopistas-1ra SEC TRAMO FEDERAL", "Michoacán","Morelia","Proceso","73%","$ 146 MDP"));
+        arregloOB.add(new ProgramaOb("Accesos a ZMVM--CONSERVACION DEL CAMINO PEDREGAL ", "Ciudad de México","Jardines del Pedregal","Proceso","60%","$ 14 MDP"));
+        arregloOB.add(new ProgramaOb("Distribuidores-Dist víal Oriente", "Jalisco","Guadalajara","Concluida","100%","$ 12 MDP"));
+        arregloOB.add(new ProgramaOb("Caminos rurales-PROLONGACION DE LA ESCOLLERA","Estado de México","Temoaya","Proceso","90%","$ 87 MDP"));
+        arregloOB.add(new ProgramaOb("Libramientos-ATENCION AL PUNTO DE CONFLICTO LA PILA", "Estado de México","Metepec","Proceso","64%","$ 64 MDP"));
+        arregloOB.add(new ProgramaOb("Marítimo- MANTENIMIENTO PUERTO PROGRESO", "Yucatán","Mérida","Concluida","100%","$ 70 MDP"));
+        arregloOB.add(new ProgramaOb("Ferroviario-Coahuila - Durango", "Coahuila","Torreón","Proceso","60%","$ 38.5 MDP"));
+        arregloOB.add(new ProgramaOb("Carretera-E.C- CHAMP. – CAMP.","Campeche","Champotón","Proceso","95%","$ 56 MDP"));
+        arregloOB.add(new ProgramaOb("Autopistas-1ra SEC TRAMO FEDERAL", "Michoacán","Morelia","Proceso","73%","$ 146 MDP"));
+        arregloOB.add(new ProgramaOb("Accesos a ZMVM--CONSERVACION DEL CAMINO PEDREGAL ", "Ciudad de México","Jardines del Pedregal","Proceso","60%","$ 14 MDP"));
+        arregloOB.add(new ProgramaOb("Distribuidores-Dist víal Oriente", "Jalisco","Guadalajara","Concluida","100%","$ 12 MDP"));
+        arregloOB.add(new ProgramaOb("Caminos rurales-PROLONGACION DE LA ESCOLLERA","Estado de México","Temoaya","Proceso","90%","$ 87 MDP"));
+        arregloOB.add(new ProgramaOb("Libramientos-ATENCION AL PUNTO DE CONFLICTO LA PILA", "Estado de México","Metepec","Proceso","64%","$ 64 MDP"));
+        arregloOB.add(new ProgramaOb("Marítimo- MANTENIMIENTO PUERTO PROGRESO", "Yucatán","Mérida","Concluida","100%","$ 70 MDP"));
+        arregloOB.add(new ProgramaOb("Ferroviario-Coahuila - Durango", "Coahuila","Torreón","Proceso","60%","$ 38.5 MDP"));
 
 
         datasetPB = new ArrayList<ProgramaOb>();
