@@ -19,13 +19,16 @@ import com.SCT.mx.SCT.ui.ResultadosAdapterI;
 import com.SCT.mx.SCT.ui.ResultadosAdapterx;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.programas.mx.programas.R;
@@ -147,7 +150,6 @@ public class Anticorrupcion extends AppCompatActivity {
         // inicia chart
         BarChart bchart = (BarChart) findViewById(R.id.i_bchart);
 
-
         ArrayList<BarEntry> yVals1 = new ArrayList<BarEntry>();
 
         //for (int i = (int) 0; i < 10 + 1; i++) {
@@ -157,13 +159,16 @@ public class Anticorrupcion extends AppCompatActivity {
 
 
 
-        yVals1.add(new BarEntry(1,50.34f, "Autotransporte Federal"));
-        yVals1.add(new BarEntry(2,81.30f, "Aeronáutica Civil"));
-        yVals1.add(new BarEntry(3,90.8f, "Desarrollo Ferroviario"));
-       // yVals1.add(new BarEntry(4,31.33f, "Transporte Marítimo"));
 
 
-
+        yVals1.add(new BarEntry(1,new float[] { 2344, 4546, 4532 },"En proyecto"));
+        yVals1.add(new BarEntry(2,new float[] { 3235, 2143,3432 },"En proceso"));
+        yVals1.add(new BarEntry(3,new float[] { 1302, 2143 ,2352},"Asignadas"));
+        yVals1.add(new BarEntry(4,new float[] { 1256, 3678, 2765 },"En proyecto"));
+        yVals1.add(new BarEntry(5,new float[] { 2456, 3457,2353 },"En proceso"));
+        yVals1.add(new BarEntry(6,new float[] { 977, 935 ,879},"Asignadas"));
+        yVals1.add(new BarEntry(7,new float[] { 1098, 3086, 2568 },"En proyecto"));
+        yVals1.add(new BarEntry(8,new float[] { 987, 2009,3547 },"En proceso"));
 
         /*yVals1.add(new BarEntry(5,10,"Coahuila"));
         yVals1.add(new BarEntry(6,0,"Colima"));
@@ -178,8 +183,10 @@ public class Anticorrupcion extends AppCompatActivity {
         yVals1.add(new BarEntry(15,29,"Michoacán"));*/
         BarDataSet set1;
 
-        set1 = new BarDataSet(yVals1, "Proyectados, En Proceso, Asignados 2018");
-        set1.setColors(ColorTemplate.MATERIAL_COLORS);
+        set1 = new BarDataSet(yVals1, "MDP");
+        //set1.setColors(ColorTemplate.MATERIAL_COLORS);
+        set1.setColors(getColors());
+        set1.setStackLabels(new String[]{"En Proyecto.", "En Proceso.", "Asignadas."});
 
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
         dataSets.add(set1);
@@ -190,29 +197,45 @@ public class Anticorrupcion extends AppCompatActivity {
         data.setBarWidth(0.9f);
 
 
+        XAxis xAxis1 = bchart.getXAxis();
+        // Set the xAxis position to bottom. Default is top
+        xAxis1.setPosition(XAxis.XAxisPosition.TOP);
+        //Customizing x axis value
+        final String[] months1 = new String[]{"","AGS", "BC", "BCS", "CAM", "COH","COL","CHI","CDMX"}; //,"DUR","GTO","GRO","HGO","JAL","MICH","PU"};
+
+        IAxisValueFormatter formatter1 = new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return months1[(int) value];
+            }
+        };
+        xAxis1.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis1.setValueFormatter(formatter1);
+
         bchart.setTouchEnabled(true);
         bchart.setData(data);
         bchart.setDrawGridBackground(false);
+        bchart.setDrawBarShadow(false);
         bchart.getDescription().setEnabled(true);
-
-
-        bchart.setDrawValueAboveBar(true);
+        bchart.getDescription().setText("Licitaciones 2018");
 
 
 
-        bchart.setDrawValueAboveBar(true);
+        bchart.setDrawValueAboveBar(false);
 
         Legend l = bchart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
         l.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+        l.setForm(Legend.LegendForm.CIRCLE);
         l.setDrawInside(true);
-        l.setXEntrySpace(2f);
-        l.setYEntrySpace(2f);
-        l.setYOffset(0f);
+        l.setXEntrySpace(7f);
+        l.setYEntrySpace(7f);
+        l.setYOffset(7f);
         l.setWordWrapEnabled(true);
-        l.setTextSize(5f);
+        l.setTextSize(12f);
 
+        //inicia top programas vs benefi
         //inicia top programas vs beneficiarios
 
 
@@ -224,8 +247,8 @@ public class Anticorrupcion extends AppCompatActivity {
 
 
 
-        entries4.add(new PieEntry(39764967f, " Mayor a 5 MDP"));
-        entries4.add(new PieEntry(84543987, " Menor a 5 MDP"));
+        entries4.add(new PieEntry(39764967f, "Mayor a 5 MDP"));
+        entries4.add(new PieEntry(84543987, "Menor a 5 MDP"));
 
 
         /*entries3.add(new PieEntry(1.33f,"Apoyo al Estudiante"));
@@ -260,6 +283,7 @@ public class Anticorrupcion extends AppCompatActivity {
         bchart4.getDescription().setText("" );
 
 
+
         Legend l3 = bchart4.getLegend();
         l3.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
         l3.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
@@ -267,11 +291,25 @@ public class Anticorrupcion extends AppCompatActivity {
         l3.setDrawInside(false);
         l3.setXEntrySpace(2f);
         l3.setYEntrySpace(2f);
-        l3.setYOffset(0f);
+        l3.setYOffset(2f);
         l3.setWordWrapEnabled(true);
-        l3.setTextSize(10f);
+        l3.setTextSize(12f);
 
         //
     }
 
+
+    private int[] getColors() {
+
+        int stacksize = 3;
+
+        // have as many colors as stack-values per entry
+        int[] colors = new int[stacksize];
+
+        for (int i = 0; i < colors.length; i++) {
+            colors[i] = ColorTemplate.MATERIAL_COLORS[i];
+        }
+
+        return colors;
+    }
 }

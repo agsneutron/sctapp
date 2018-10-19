@@ -251,9 +251,14 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
 
 
-        yVals1.add(new BarEntry(1,1394,"En proyecto Federal"));
-        yVals1.add(new BarEntry(2,3235,"En proceso civil"));
-        yVals1.add(new BarEntry(3,10302,"Asignadas"));
+        yVals1.add(new BarEntry(1,new float[] { 2344, 4546, 4532 },"En proyecto"));
+        yVals1.add(new BarEntry(2,new float[] { 3235, 2143,3432 },"En proceso"));
+        yVals1.add(new BarEntry(3,new float[] { 1302, 2143 ,2352},"Asignadas"));
+        yVals1.add(new BarEntry(4,new float[] { 1256, 3678, 2765 },"En proyecto"));
+        yVals1.add(new BarEntry(5,new float[] { 2456, 3457,2353 },"En proceso"));
+        yVals1.add(new BarEntry(6,new float[] { 977, 935 ,879},"Asignadas"));
+        yVals1.add(new BarEntry(7,new float[] { 1098, 3086, 2568 },"En proyecto"));
+        yVals1.add(new BarEntry(8,new float[] { 987, 2009,3547 },"En proceso"));
 
         /*yVals1.add(new BarEntry(5,10,"Coahuila"));
         yVals1.add(new BarEntry(6,0,"Colima"));
@@ -268,8 +273,10 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         yVals1.add(new BarEntry(15,29,"Michoacán"));*/
         BarDataSet set1;
 
-        set1 = new BarDataSet(yVals1, "Licitaciones del 2018");
-        set1.setColors(ColorTemplate.MATERIAL_COLORS);
+        set1 = new BarDataSet(yVals1, "MDP");
+        //set1.setColors(ColorTemplate.MATERIAL_COLORS);
+        set1.setColors(getColors());
+        set1.setStackLabels(new String[]{"En Proyecto", "En Proceso", "Asignadas"});
 
         ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
         dataSets.add(set1);
@@ -280,14 +287,30 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
         data.setBarWidth(0.9f);
 
 
+        XAxis xAxis1 = bchart.getXAxis();
+        // Set the xAxis position to bottom. Default is top
+        xAxis1.setPosition(XAxis.XAxisPosition.TOP);
+        //Customizing x axis value
+        final String[] months1 = new String[]{"","AGS", "BC", "BCS", "CAM", "COH","COL","CHI","CDMX"}; //,"DUR","GTO","GRO","HGO","JAL","MICH","PU"};
+
+        IAxisValueFormatter formatter1 = new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return months1[(int) value];
+            }
+        };
+        xAxis1.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis1.setValueFormatter(formatter1);
+
         bchart.setTouchEnabled(true);
         bchart.setData(data);
         bchart.setDrawGridBackground(false);
         bchart.getDescription().setEnabled(true);
+        bchart.getDescription().setText("Licitaciones 2018");
 
 
 
-        bchart.setDrawValueAboveBar(true);
+        bchart.setDrawValueAboveBar(false);
 
         Legend l = bchart.getLegend();
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
@@ -771,6 +794,20 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
 
    }
+
+    private int[] getColors() {
+
+        int stacksize = 3;
+
+        // have as many colors as stack-values per entry
+        int[] colors = new int[stacksize];
+
+        for (int i = 0; i < colors.length; i++) {
+            colors[i] = ColorTemplate.MATERIAL_COLORS[i];
+        }
+
+        return colors;
+    }
 
 
 }

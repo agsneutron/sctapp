@@ -228,7 +228,7 @@
                     android:layout_marginRight="2dp"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="MICHOACAN"
+                    android:text="MICHOACÁN"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp" />
@@ -307,7 +307,7 @@
                     android:layout_marginRight="2dp"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="AMPLIACIÓN"
+                    android:text="EN PROCESO"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp" />
@@ -340,7 +340,7 @@
                     android:layout_marginRight="2dp"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="100 % "
+                    android:text="95 % "
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp" />
@@ -984,7 +984,7 @@
                     android:gravity="start|center_vertical"
                     android:padding="10dp"
                     android:paddingLeft="20dp"
-                    android:text="OBRA DE CAPTACION (PROTECCION DE FUENTE)  RED DE DISTRIBUCION  TOMAS DOMICILIARIAS"
+                    android:text="OBRA DE AMPLIACIÓN Y MODERNIZACIÓN (PROTECCION DE FUENTE)  RED DE DISTRIBUCION  EN TRAMOS"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -1039,7 +1039,7 @@
                     android:layout_marginRight="2dp"
                     android:gravity="end"
                     android:padding="10dp"
-                    android:text="SI"
+                    android:text="NO"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp" />
@@ -1159,22 +1159,28 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:padding="0dp"
                     android:src="@drawable/captpluv" />
 
                 <ImageView
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:padding="0dp"
                     android:src="@drawable/capt2" />
 
                 <ImageView
                     android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:padding="0dp"
                     android:src="@drawable/capt3" />
 
             </LinearLayout>
