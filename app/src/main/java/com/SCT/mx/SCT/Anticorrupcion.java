@@ -14,9 +14,10 @@ import android.view.View;
 import com.SCT.mx.SCT.domain.ProgramaOb;
 import com.SCT.mx.SCT.domain.ProgramasBeneficiarios;
 import com.SCT.mx.SCT.domain.ProgramasInversion;
+import com.SCT.mx.SCT.domain.AnticorrupcionModel;
 import com.SCT.mx.SCT.ui.ResultadosAdapter;
 import com.SCT.mx.SCT.ui.ResultadosAdapterI;
-import com.SCT.mx.SCT.ui.ResultadosAdapterx;
+import com.SCT.mx.SCT.ui.ResultadosAdapterAnti;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.AxisBase;
@@ -40,8 +41,8 @@ public class Anticorrupcion extends AppCompatActivity {
 
 
 
-    ArrayList<ProgramasBeneficiarios> datasetPB;
-    ArrayList<ProgramasInversion> datasetPI;
+    ArrayList<AnticorrupcionModel> datasetPB;
+    ArrayList<AnticorrupcionModel> datasetPI;
     private RecyclerView recyclerView, recyclerViewI;
     private RecyclerView.Adapter adapter, adapterI;
 
@@ -64,30 +65,30 @@ public class Anticorrupcion extends AppCompatActivity {
 
         //Nombre, Meta_total, avance_total, avance_unidades, avance_porcentaje, avance_importe
 
-        ArrayList<ProgramasBeneficiarios> arregloPB = new ArrayList<>();
-        arregloPB.add(new ProgramasBeneficiarios("Proyecto" ,"Inversión"));
+        ArrayList<AnticorrupcionModel> arregloPB = new ArrayList<>();
+        arregloPB.add(new AnticorrupcionModel("Nombre" , "Estatus", "Licitación","Inversión"));
 
-        arregloPB.add(new ProgramasBeneficiarios("Proyectadas - CONSERVACION DEL CAMINO ALIANZA PROD..." ,"$ 50.346,578.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Proyectadas - ULUMAL-VILLA DE GUADALUPE-SAN MIGUEL..." ,"$ 58.345,643.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Proyectadas - CONSTRUCCION DE LAS OBRAS CHIAPAS DE...,","$ 80.858,345.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Proyectadas - CONSERVACION DEL CAMINO ALIANZA PROD..." ,"$ 70.786,578.00"));
-        arregloPB.add(new ProgramasBeneficiarios("En Proceso - ONSERVACION DEL CAMINO E.C. (MONCLOVA...", "$ 81,300,643.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Asignadas - CAMINO NUEVA VIDA - UNION 20 DE JUNIO ...", "$ 90,800,000.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Proyectadas - CONSERVACION DEL CAMINO ALIANZA PROD..." ,"$ 50.346,578.00"));
-        arregloPB.add(new ProgramasBeneficiarios("En Proceso - ONSERVACION DEL CAMINO E.C. (MONCLOVA...", "$ 81,300,643.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Asignadas - CAMINO NUEVA VIDA - UNION 20 DE JUNIO ...", "$ 90,800,000.00"));
-        arregloPB.add(new ProgramasBeneficiarios("En Proceso - ONSERVACION DEL CAMINO E.C. (MONCLOVA...", "$ 81,300,643.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Asignadas - ULUMAL-VILLA DE GUADALUPE-SAN MIGUEL, ...", "$ 90,800,000.00"));
-        arregloPB.add(new ProgramasBeneficiarios("En Proceso - ONSERVACION DEL CAMINO E.C. (MONCLOVA...", "$ 81,300,643.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Asignadas - CAMINO NUEVA VIDA - UNION 20 DE JUNIO ... ", "$ 90,800,000.00"));
-        arregloPB.add(new ProgramasBeneficiarios("En Proceso - ONSERVACION DEL CAMINO E.C. (MONCLOVA...", "$ 81,300,643.00"));
-        arregloPB.add(new ProgramasBeneficiarios("Asignadas - CAMINO NUEVA VIDA - UNION 20 DE JUNIO ...", "$ 90,800,000.00"));
+        arregloPB.add(new AnticorrupcionModel("CONSERVACION DEL CAMINO ALIANZA PROD...","Proyectada" ,"05-7-Cl-A-005-Y-0-05,2013","$ 50,346,578.00"));
+        arregloPB.add(new AnticorrupcionModel("ULUMAL-VILLA DE GUADALUPE-SAN MIGUEL...","Proyectada" ,"05-7-Cl-A-005-Y-0-04,2015","$ 58,345,643.00"));
+        arregloPB.add(new AnticorrupcionModel("CONSTRUCCION DE LAS OBRAS CHIAPAS DE...,","Proyectada","05-7-Cl-A-005-Y-0-06,2015","$ 80,858,345.00"));
+        arregloPB.add(new AnticorrupcionModel("CONSERVACION DEL CAMINO ALIANZA PROD...","Proyectada","05-7-Cl-A-005-Y-0-07,2014" ,"$ 70,786,578.00"));
+        arregloPB.add(new AnticorrupcionModel("CONSERVACION DEL CAMINO E.C. (MONCLOVA...","Proceso","05-7-Cl-A-005-Y-0-09,2016", "$ 81,300,643.00"));
+        arregloPB.add(new AnticorrupcionModel("CAMINO NUEVA VIDA - UNION 20 DE JUNIO ...","Asignada","05-7-Cl-A-005-Y-0-10,2016", "$ 90,800,000.00"));
+        arregloPB.add(new AnticorrupcionModel("CONSERVACION DEL CAMINO ALIANZA PROD...","Proyectada","05-7-Cl-A-005-Y-0-11,2015" ,"$ 50,346,578.00"));
+        arregloPB.add(new AnticorrupcionModel("ONSERVACION DEL CAMINO E.C. (MONCLOVA...","Proceso","05-7-Cl-A-005-Y-0-08,2014", "$ 81,300,643.00"));
+        arregloPB.add(new AnticorrupcionModel("CAMINO NUEVA VIDA - UNION 20 DE JUNIO ...","Asignada","05-7-Cl-A-005-Y-0-07,2015", "$ 90,800,000.00"));
+        arregloPB.add(new AnticorrupcionModel("CONSERVACION DEL CAMINO E.C. (MONCLOVA...","Proceso","05-7-Cl-A-005-Y-0-09,2016", "$ 81,300,643.00"));
+        arregloPB.add(new AnticorrupcionModel("ULUMAL-VILLA DE GUADALUPE-SAN MIGUEL, ...","Asignada","05-7-Cl-A-005-Y-0-15,2017", "$ 90,800,000.00"));
+        arregloPB.add(new AnticorrupcionModel("ONSERVACION DEL CAMINO E.C. (MONCLOVA...","Proceso","05-7-Cl-A-005-Y-0-34,2018", "$ 81,300,643.00"));
+        arregloPB.add(new AnticorrupcionModel("CAMINO NUEVA VIDA - UNION 20 DE JUNIO ... ","Asignada","05-7-Cl-A-005-Y-0-56,2018", "$ 90,800,000.00"));
+        arregloPB.add(new AnticorrupcionModel("ONSERVACION DEL CAMINO E.C. (MONCLOVA...","Proceso","05-7-Cl-A-005-Y-0-19,2018", "$ 81,300,643.00"));
+        arregloPB.add(new AnticorrupcionModel("CAMINO NUEVA VIDA - UNION 20 DE JUNIO ...","Asiganada","05-7-Cl-A-005-Y-0-22,2017", "$ 90,800,000.00"));
 
-        datasetPB = new ArrayList<ProgramasBeneficiarios>();
+        datasetPB = new ArrayList<AnticorrupcionModel>();
         datasetPB = arregloPB;
         recyclerView = (RecyclerView) findViewById(R.id.rv_list1);
         recyclerView.setHasFixedSize(true);
-        adapter = new ResultadosAdapter(datasetPB, R.layout.item_list_contenti, Anticorrupcion.this);//(cobroarraylist, R.layout.cobrador_item_lista);
+        adapter = new ResultadosAdapterAnti(datasetPB, R.layout.item_list_contentanti, Anticorrupcion.this);//(cobroarraylist, R.layout.cobrador_item_lista);
         //recyclerView.setAdapter(new CobroAdapter(cobroarraylist, R.layout.cobrador_item_lista));  //cobroarraylist
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Anticorrupcion.this));
@@ -95,53 +96,41 @@ public class Anticorrupcion extends AppCompatActivity {
 
 
         //rvl2
-        ArrayList<ProgramasInversion> arregloPI = new ArrayList<>();
+        ArrayList<AnticorrupcionModel> arregloPI = new ArrayList<>();
 
 
 
-        arregloPI.add(new ProgramasInversion("Proyecto" ,"Inversión"));
-        arregloPI.add(new ProgramasInversion("Menor a 5M - Radio Federal Difurosa Mexiquense", "$ 4,286,278.00"));
+        arregloPI.add(new AnticorrupcionModel("Contrato" ,"Estatus", "Contrato","Inversión"));
+        arregloPI.add(new AnticorrupcionModel("Radio Federal Difurosa Mexiquense","Menor a 5M","00009003-005-05", "$ 4,286,278.00"));
 
-        arregloPI.add(new ProgramasInversion("Menor a 5M - Televisión Civil Nuevo canal 11TV", "$ 1,576,588.00"));
+        arregloPI.add(new AnticorrupcionModel("Televisión Civil Nuevo canal 11TV","Menor a 5M","00009003-005-05", "$ 1,576,588.00"));
 
-        arregloPI.add(new ProgramasInversion("Menor a 5M- Internet Red Mexico Conectado", "$ 1,506,256.00"));
-        arregloPI.add(new ProgramasInversion("Menor a 5M -Telefonía Red Rural PPT", "$ 2,776,538.00"));
-        arregloPI.add(new ProgramasInversion("Mayor a 5M - Radio Federal - Difusor 457.FM", "$ 7,286,278.00"));
+        arregloPI.add(new AnticorrupcionModel("Internet Red Mexico Conectado","Menor a 5M","00009003-005-05", "$ 1,506,256.00"));
+        arregloPI.add(new AnticorrupcionModel("Telefonía Red Rural PPT","Menor a 5M","00009003-005-05", "$ 2,776,538.00"));
+        arregloPI.add(new AnticorrupcionModel("Radio Federal - Difusor 457.FM","Mayor a 5M","00009003-005-05", "$ 7,286,278.00"));
 
-        arregloPI.add(new ProgramasInversion("Mayor a 5M - Televisión Civil", "$ 13,576,588.00"));
+        arregloPI.add(new AnticorrupcionModel("Televisión Civil","Mayor a 5M","00009003-005-05", "$ 13,576,588.00"));
 
-        arregloPI.add(new ProgramasInversion("Mayor a 5M- Internet", "$ 18,506,256.00"));
-        arregloPI.add(new ProgramasInversion("Mayor a 5M -Telefonía", "$ 23,776,538.00"));
-        arregloPI.add(new ProgramasInversion("Menor a 5M - Radio Federal", "$ 4,286,278.00"));
+        arregloPI.add(new AnticorrupcionModel("Internet","Mayor a 5M","00009003-005-05", "$ 18,506,256.00"));
+        arregloPI.add(new AnticorrupcionModel("Telefonía","Mayor a 5M","00009003-005-05", "$ 23,776,538.00"));
+        arregloPI.add(new AnticorrupcionModel("Radio Federal","Menor a 5M","00009003-005-05", "$ 4,286,278.00"));
 
-        arregloPI.add(new ProgramasInversion("Menor a 5M - Televisión Civil", "$ 1,576,588.00"));
+        arregloPI.add(new AnticorrupcionModel("Televisión Civil","Menor a 5M","00009003-005-05", "$ 1,576,588.00"));
 
-        arregloPI.add(new ProgramasInversion("Menor a 5M- Internet", "$ 1,506,256.00"));
-        arregloPI.add(new ProgramasInversion("Menor a 5M -Telefonía", "$ 2,776,538.00"));
-        arregloPI.add(new ProgramasInversion("Mayor a 5M - Radio Federal", "$ 7,286,278.00"));
+        arregloPI.add(new AnticorrupcionModel("Internet","Menor a 5M","00009003-005-05", "$ 1,506,256.00"));
+        arregloPI.add(new AnticorrupcionModel("Telefonía","Menor a 5M","00009003-005-05", "$ 2,776,538.00"));
+        arregloPI.add(new AnticorrupcionModel("MRadio Federal","Mayor a 5M","00009003-005-05", "$ 7,286,278.00"));
 
-        arregloPI.add(new ProgramasInversion("Mayor a 5M - Televisión Civil", "$ 13,576,588.00"));
+        arregloPI.add(new AnticorrupcionModel("Televisión Civil","Mayor a 5M","00009003-005-05", "$ 13,576,588.00"));
 
-        arregloPI.add(new ProgramasInversion("Mayor a 5M- Internet", "$ 18,506,256.00"));
-        arregloPI.add(new ProgramasInversion("Mayor a 5M -Telefonía", "$ 23,776,538.00"));
-        /*arregloPI.add(new ProgramasInversion("Tu Empleo Formal", "$ 1,535,843.00"));
-        arregloPI.add(new ProgramasInversion("Asistencia Social a la Comunidad", "$ 1,457,239.00"));
-        arregloPI.add(new ProgramasInversion("Apoyo al Estudiante", "$ 1,334,164.00"));
-        arregloPI.add(new ProgramasInversion("Atención salud Visual", "$ 1,006,235.00"));
-        arregloPI.add(new ProgramasInversion("Premio Estatal a la Juventud", "$ 975,246.00"));
-        arregloPI.add(new ProgramasInversion("Mejoramiento de Vivienda", "$ 753,125.00"));
-        arregloPI.add(new ProgramasInversion("Programa de Apoyo a Pequeños Productores", "$ 682,349.00"));
-        arregloPI.add(new ProgramasInversion("Apoyo a la Población Indígena", "$ 579,835.00"));
-        arregloPI.add(new ProgramasInversion("Apoyo a Mujeres Jefas de Familia", "$ 509,998.00"));
-        arregloPI.add(new ProgramasInversion("Formación del Sector Artesanal", "$ 459,976.00"));
-        arregloPI.add(new ProgramasInversion("Proyectos Productivos", "$ 431,930.00"));
-*/
+        arregloPI.add(new AnticorrupcionModel("Internet","Mayor a 5M","00009003-005-05", "$ 18,506,256.00"));
+        arregloPI.add(new AnticorrupcionModel("Telefonía","Mayor a 5M","00009003-005-05", "$ 23,776,538.00"));
 
-        datasetPI = new ArrayList<ProgramasInversion>();
+        datasetPI = new ArrayList<AnticorrupcionModel>();
         datasetPI = arregloPI;
         recyclerViewI = (RecyclerView) findViewById(R.id.rv_list2);
         recyclerViewI.setHasFixedSize(true);
-        adapterI = new ResultadosAdapterI(datasetPI, R.layout.item_list_contenti, Anticorrupcion.this);//(cobroarraylist, R.layout.cobrador_item_lista);
+        adapterI = new ResultadosAdapterAnti(datasetPI, R.layout.item_list_contentanti, Anticorrupcion.this);//(cobroarraylist, R.layout.cobrador_item_lista);
         //recyclerView.setAdapter(new CobroAdapter(cobroarraylist, R.layout.cobrador_item_lista));  //cobroarraylist
         recyclerViewI.setAdapter(adapterI);
         recyclerViewI.setLayoutManager(new LinearLayoutManager(Anticorrupcion.this));
