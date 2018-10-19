@@ -78,15 +78,12 @@
                         android:layout_margin="8dp"
                         android:padding="8dp" />
 
-                    <com.github.mikephil.charting.charts.PieChart
-                        android:id="@+id/bchart4"
-                        android:layout_width="317dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="8dp"
-                        android:padding="8dp" />
-
-
-                </LinearLayout>
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/bchart1"
+                    android:layout_width="318dp"
+                    android:layout_height="match_parent"
+                     />
+            </LinearLayout>
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/fab_c"
