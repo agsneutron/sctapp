@@ -286,6 +286,9 @@ public class Infraestructura extends AppCompatActivity implements OnMapReadyCall
         LatLng ger = new LatLng( 16.775,-93.7417);
         mMap.addMarker(new MarkerOptions().position(sin).title("Guerrero, México").snippet(" Obras: 753 "+ "\n Inversión: $10,743,074.00"));
 
+        LatLng mch = new LatLng( 19.566519,-101.706829);
+        mMap.addMarker(new MarkerOptions().position(mch).title("Michoacán, México").snippet(" Obras: 278 "+ "\n Inversión: $14,353,074.00"));
+
 
         LatLng center = new LatLng( 22.6526121, -100.1780452);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(center));

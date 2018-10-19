@@ -49,8 +49,8 @@ public class ResultadosAdapterAnti extends RecyclerView.Adapter<ResultadosAdapte
 
         viewHolder.lprograma.setText(resultado.getNombre());
         viewHolder.lbeneficiarios.setText(resultado.getEstatus());
-        viewHolder.lprograma.setText(resultado.getNo_contrato());
-        viewHolder.lbeneficiarios.setText(resultado.getInversion());
+        viewHolder.l2.setText(resultado.getNo_contrato());
+        viewHolder.l3.setText(resultado.getInversion());
 
         // set listeners a los botones
         viewHolder.setOnClickListeners();
@@ -78,6 +78,8 @@ public class ResultadosAdapterAnti extends RecyclerView.Adapter<ResultadosAdapte
 
         public TextView lprograma;
         public TextView lbeneficiarios;
+        public TextView l2;
+        public TextView l3;
 
 
         public ViewHolder(View itemView) {
@@ -86,6 +88,8 @@ public class ResultadosAdapterAnti extends RecyclerView.Adapter<ResultadosAdapte
 
             lprograma = (TextView) itemView.findViewById(R.id.id_text);
             lbeneficiarios = (TextView) itemView.findViewById(R.id.content);
+            l2 = (TextView) itemView.findViewById(R.id.content1);
+            l3= (TextView) itemView.findViewById(R.id.content2);
 
 
            /* itemView.setOnClickListener(new View.OnClickListener() {

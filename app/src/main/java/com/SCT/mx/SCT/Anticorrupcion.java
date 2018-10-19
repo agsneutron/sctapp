@@ -100,7 +100,7 @@ public class Anticorrupcion extends AppCompatActivity {
 
 
 
-        arregloPI.add(new AnticorrupcionModel("Contrato" ,"Estatus", "Contrato","Inversión"));
+        arregloPI.add(new AnticorrupcionModel("Nombre" ,"Tipo", "Contrato","Inversión"));
         arregloPI.add(new AnticorrupcionModel("Radio Federal Difurosa Mexiquense","Menor a 5M","00009003-005-05", "$ 4,286,278.00"));
 
         arregloPI.add(new AnticorrupcionModel("Televisión Civil Nuevo canal 11TV","Menor a 5M","00009003-005-05", "$ 1,576,588.00"));

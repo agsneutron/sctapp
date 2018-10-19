@@ -103,7 +103,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="end|bottom"
                 android:padding="10dp"
-                tools:listitem="@layout/item_list_contenti">
+                tools:listitem="@layout/item_list_contentanti">
 
             </android.support.v7.widget.RecyclerView>
 
@@ -205,7 +205,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="end|bottom"
                 android:padding="10dp"
-                tools:listitem="@layout/item_list_contenti">
+                tools:listitem="@layout/item_list_contentanti">
 
             </android.support.v7.widget.RecyclerView>
 
