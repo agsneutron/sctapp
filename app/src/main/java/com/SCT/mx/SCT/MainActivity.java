@@ -653,19 +653,19 @@ public class MainActivity extends AppCompatActivity implements OnChartValueSelec
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            Intent intent = new Intent(MainActivity.this, Infraestructura.class);
             startActivity(intent);
         } else if (id == R.id.nav_gallery) {
-            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            Intent intent = new Intent(MainActivity.this, Anticorrupcion.class);
             startActivity(intent);
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(MainActivity.this, ProgramasActivity.class);
-            startActivity(intent);
+
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            this.finishAffinity();
 
         }
 

@@ -11,27 +11,23 @@
     <android.support.v7.widget.CardView
         android:id="@+id/encabezado"
         android:layout_width="match_parent"
-        android:layout_height="198dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="0sp"
+        android:layout_marginTop="0sp"
         app:layout_constraintBottom_toTopOf="@+id/col1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="400dp"
-            android:layout_height="100dp"
-            android:src="@drawable/logo_sct"
-            android:layout_gravity="bottom|start"/>
+
 
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
         android:id="@+id/col1"
-        android:layout_width="0dp"
+        android:layout_width="0sp"
         android:layout_height="match_parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8sp"
+        android:layout_marginStart="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/col2"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,34 +38,40 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <ImageView
+                android:layout_width="400sp"
+                android:layout_height="122sp"
+                android:layout_gravity="bottom|start"
+                android:src="@drawable/logo_sct" />
+
             <!--<RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="start"
                     android:text="Identificador de Obra"
                     android:textStyle="bold"
                     android:gravity="start"
-                    android:textSize="20sp"
-                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:padding="10sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="end|center_horizontal"
                     android:gravity="end"
                     android:text="CG-0333674"
-                    android:textSize="20sp"
-                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:padding="10sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:textAlignment="gravity"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     />
@@ -83,39 +85,39 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Identificador de Obra"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="CG-0333674"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -123,31 +125,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="80sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="80sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Denominación"
                     android:textAlignment="gravity"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="90dp"
+                    android:layout_height="80sp"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginEnd="2sp"
+                    android:layout_marginRight="2sp"
                     android:breakStrategy="high_quality"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="ULUMAL-VILLA DE GUADALUPE-SAN MIGUEL, DEL KM 2+440 AL KM 23+200 (TRAMOS AISLADOS)"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
@@ -156,7 +158,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -164,39 +166,39 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Dependencia/Secretaría"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="SCT"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -204,39 +206,39 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Estado"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="MICHOACÁN"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -244,111 +246,111 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="MUNICIPIO"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="LÁZARO CÁRDENAS"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Tipo de Obra"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="EN PROCESO"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Avance"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="95 % "
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -356,110 +358,110 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Fecha de Inicio"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Fecha de Finalización"
                     android:textAlignment="gravity"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
-                    android:paddingTop="0dp"
+                    android:padding="10sp"
+                    android:paddingTop="0sp"
                     android:text="01/07/2018"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="normal" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
-                    android:paddingTop="0dp"
+                    android:padding="10sp"
+                    android:paddingTop="0sp"
                     android:text="15/11/2018"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Última Modificación"
 
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="15/OCT/2018 03:45 PM"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -472,10 +474,10 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/col2"
-        android:layout_width="0dp"
+        android:layout_width="0sp"
         android:layout_height="match_parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8sp"
+        android:layout_marginStart="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/col3"
         app:layout_constraintStart_toEndOf="@id/col1"
@@ -490,19 +492,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="TIPOS DE INVERSIÓN"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -510,27 +512,27 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tvF"
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="100sp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Federal"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="0sp"
                     android:layout_toEndOf="@+id/tvF"
                     android:layout_toRightOf="@+id/tvF"
                     android:adjustViewBounds="false"
@@ -541,27 +543,27 @@
 
                 <TextView
                     android:id="@+id/tvS"
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="100sp"
+                    android:layout_height="45sp"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:layout_toLeftOf="@+id/ibS"
                     android:layout_toStartOf="@+id/ibS"
                     android:gravity="end"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Social"
                     android:textAlignment="gravity"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/ibS"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="0sp"
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:foregroundGravity="center"
@@ -570,27 +572,27 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tvE"
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="100sp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Estatal"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="0sp"
                     android:layout_toEndOf="@+id/tvE"
                     android:layout_toRightOf="@+id/tvE"
                     android:adjustViewBounds="false"
@@ -601,27 +603,27 @@
 
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="100sp"
+                    android:layout_height="45sp"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:layout_toLeftOf="@+id/ibP"
                     android:layout_toStartOf="@+id/ibP"
                     android:gravity="end"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Privada"
                     android:textAlignment="gravity"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/ibP"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="0sp"
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:foregroundGravity="center"
@@ -630,27 +632,27 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/tvM"
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="100sp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Municipal"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginTop="0dp"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="0sp"
                     android:layout_toEndOf="@+id/tvM"
                     android:layout_toRightOf="@+id/tvM"
                     android:adjustViewBounds="false"
@@ -660,27 +662,27 @@
                     app:srcCompat="@drawable/ic_check_black_24dp" />
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
+                    android:layout_width="100sp"
+                    android:layout_height="45sp"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:layout_toLeftOf="@+id/ibO"
                     android:layout_toStartOf="@+id/ibO"
                     android:gravity="end"
-                    android:padding="10dp"
-                    android:paddingBottom="0dp"
+                    android:padding="10sp"
+                    android:paddingBottom="0sp"
                     android:text="Otros"
                     android:textAlignment="gravity"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/ibO"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="0sp"
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
                     android:foregroundGravity="center"
@@ -689,7 +691,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -697,52 +699,52 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Inversión Total"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
-                    android:text="$ 3.70 MDP"
+                    android:padding="10sp"
+                    android:text="$ 3.70 Msp"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="POBLACIÓN"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -751,39 +753,39 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Población Objetivo"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text=" USUARIOS "
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -791,83 +793,83 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Impacto"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text=" NACIONAL"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Señalización"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text=" SIN SEÑALIZACIÓN"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="TIPOS DE CLASIFICACIÓN"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -875,18 +877,18 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="OBRAS INSTITUCIONALES"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -894,18 +896,18 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="PLAN MICHOACÁN"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -913,22 +915,28 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
-                    android:text="COMPROMPROMISO DE GOBIERNO"
-                    android:textSize="20sp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
+                    android:text="COMPROMISO DE GOBIERNO"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
             </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="2sp"
+                android:background="@color/lightgray" />
 
         </LinearLayout>
 
@@ -936,10 +944,10 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/col3"
-        android:layout_width="0dp"
+        android:layout_width="0sp"
         android:layout_height="match_parent"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8sp"
+        android:layout_marginStart="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/col2"
@@ -954,19 +962,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="DESCRIPCIÓN"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -974,19 +982,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="150sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="150sp"
                     android:layout_gravity="center"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="OBRA DE AMPLIACIÓN Y MODERNIZACIÓN (PROTECCION DE FUENTE)  RED DE DISTRIBUCION  EN TRAMOS"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -994,19 +1002,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="INAUGURACIÓN"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -1015,39 +1023,39 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Inaugurada"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="NO"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="2sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="2sp"
                 android:background="@color/lightgray" />
@@ -1055,83 +1063,83 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Susceptible de Inaugurar"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="SI"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="start"
                     android:gravity="start"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="Inaugurador"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="end|center_horizontal"
-                    android:layout_marginRight="2dp"
+                    android:layout_marginRight="2sp"
                     android:gravity="end"
-                    android:padding="10dp"
+                    android:padding="10sp"
                     android:text="GOBERNADOR"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:background="@color/lightgray"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="OBSERVACIONES"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -1139,19 +1147,19 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45sp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
                     android:gravity="start|center_vertical"
-                    android:padding="10dp"
-                    android:paddingLeft="20dp"
+                    android:padding="10sp"
+                    android:paddingLeft="20sp"
                     android:text="SIN OBSERVACIONES"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
 
@@ -1159,32 +1167,38 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120sp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="140dp"
+                    android:layout_width="140sp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:padding="0dp"
+                    android:layout_margin="0sp"
+                    android:padding="0sp"
                     android:src="@drawable/captpluv" />
 
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="150sp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:padding="0dp"
+                    android:layout_margin="0sp"
+                    android:padding="0sp"
                     android:src="@drawable/capt2" />
 
                 <ImageView
-                    android:layout_width="150dp"
+                    android:layout_width="150sp"
                     android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:padding="0dp"
+                    android:layout_margin="0sp"
+                    android:padding="0sp"
                     android:src="@drawable/capt3" />
 
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="2sp"
+                android:background="@color/lightgray" />
 
         </LinearLayout>
 

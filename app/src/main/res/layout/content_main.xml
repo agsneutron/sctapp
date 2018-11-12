@@ -69,24 +69,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/firsttitle">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/map"
                     class="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="318dp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bchart1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <com.github.mikephil.charting.charts.LineChart
                     android:id="@+id/bchart1"
-                    android:layout_width="318dp"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:padding="10dp"/>
-            </LinearLayout>
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/map"
+                    app:layout_constraintTop_toTopOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab_p"
@@ -160,24 +172,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tit1">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
 
 
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/bchart2"
-                    android:layout_width="270dp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/c2r"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
                 <LinearLayout
-                    android:layout_width="364dp"
+                    android:id="@+id/c2r"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_gravity="left">
+                    android:layout_gravity="left"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/bchart2"
+                    app:layout_constraintTop_toTopOf="parent">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -195,7 +221,7 @@
                 </LinearLayout>
 
 
-            </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab_s"
@@ -265,17 +291,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvsub2">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
 
 
             <LinearLayout
-                android:layout_width="317dp"
+                android:id="@+id/c3l"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_gravity="left">
+                android:layout_gravity="left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bchart3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -294,13 +330,17 @@
 
                 <com.github.mikephil.charting.charts.HorizontalBarChart
                     android:id="@+id/bchart3"
-                    android:layout_width="317dp"
-                    android:layout_height="match_parent" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/c3l"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
 
 
 
-            </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab_t"
@@ -370,50 +410,67 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvsub3">
 
-            <LinearLayout
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:padding="5dp">
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="left">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="Licitaciones"
-                    android:textSize="18sp"
-                    android:textStyle="italic"
-                    android:gravity="center"/>
-                <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/bchart"
-                    android:layout_width="317dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/c4l"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/c4r"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="317dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="left">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="Contratos"
-                    android:textSize="18sp"
-                    android:textStyle="italic"
-                    android:gravity="center"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="Licitaciones"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
 
-                <com.github.mikephil.charting.charts.PieChart
-                    android:id="@+id/bchart4"
-                    android:layout_width="317dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/bchart"
+                        android:layout_width="317dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
 
-            </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/c4r"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/c4l"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="Contratos"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/bchart4"
+                        android:layout_width="317dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/fab_c"

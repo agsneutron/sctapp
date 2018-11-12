@@ -270,7 +270,7 @@ public class Anticorrupcion extends AppCompatActivity {
         bchart4.setEntryLabelTextSize(8f);
         bchart4.getLegend().setEnabled(true);
         bchart4.getDescription().setText("" );
-
+        bchart4.setFitsSystemWindows(true);
 
 
         Legend l3 = bchart4.getLegend();

@@ -3,31 +3,32 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="10dp">
+    android:padding="10sp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
 
 
     <TextView
         android:id="@+id/id_text"
-        android:layout_width="250dp"
+        android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:scrollHorizontally="false"
         android:breakStrategy="simple"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:layout_gravity="left"
         android:ellipsize="end"/>
 
     <TextView
         android:id="@+id/t2"
-        android:layout_width="130dp"
+        android:layout_width="130sp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="normal"/>
 
 
@@ -38,36 +39,36 @@
         android:layout_weight="1"
         android:scrollHorizontally="false"
         android:breakStrategy="simple"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:layout_gravity="left"
         android:ellipsize="end"/>
 
     <TextView
         android:id="@+id/t4"
-        android:layout_width="100dp"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="normal"/>
 
 
     <TextView
         android:id="@+id/t5"
-        android:layout_width="70dp"
+        android:layout_width="70sp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:scrollHorizontally="false"
         android:breakStrategy="simple"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:layout_gravity="left"
         android:ellipsize="end"/>
 
     <TextView
         android:id="@+id/t6"
-        android:layout_width="100dp"
+        android:layout_width="100sp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:textSize="16sp"
+        android:textSize="12sp"
         android:textStyle="bold"/>
 
     </LinearLayout>
